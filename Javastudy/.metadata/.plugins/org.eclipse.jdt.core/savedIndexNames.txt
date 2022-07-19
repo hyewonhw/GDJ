@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+C:\GDJ\Javastudy\.metadata\.plugins\org.eclipse.jdt.core
+2285689173.index
+793262583.index
