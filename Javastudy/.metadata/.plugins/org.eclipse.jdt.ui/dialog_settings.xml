@@ -26,6 +26,7 @@
 	<section name="quick_assist_proposal_size">
 	</section>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<section name="org.eclipse.jdt.internal.ui.dialogs.FilteredTypesSelectionDialog">
 		<item key="ShowStatusLine" value="true"/>
 		<item key="History" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History/&gt;"/>
@@ -37,6 +38,8 @@
 			<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
 		</section>
 	</section>
+=======
+>>>>>>> cf92c83911f4570e95feb557aea110d8f536b219
 =======
 >>>>>>> cf92c83911f4570e95feb557aea110d8f536b219
 </section>

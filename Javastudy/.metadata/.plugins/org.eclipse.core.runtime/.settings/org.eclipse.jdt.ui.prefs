@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 content_assist_disabled_computers=org.eclipse.jdt.ui.textProposalCategory\u0000org.eclipse.jdt.ui.javaPostfixProposalCategory\u0000org.eclipse.jdt.ui.javaAllProposalCategory\u0000org.eclipse.jdt.ui.javaTypeProposalCategory\u0000org.eclipse.jdt.ui.javaNoTypeProposalCategory\u0000org.eclipse.jdt.ui.javaChainProposalCategory\u0000
 content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"/>
 content_assist_number_of_computers=20
@@ -8,6 +9,8 @@ semanticHighlighting.class.color=255,0,255
 semanticHighlighting.interface.color=128,128,128
 semanticHighlighting.method.color=255,128,64
 =======
+=======
+>>>>>>> cf92c83911f4570e95feb557aea110d8f536b219
 content_assist_completion_replacement_background=200,200,0
 content_assist_completion_replacement_foreground=200,0,0
 content_assist_disabled_computers=org.eclipse.jdt.ui.textProposalCategory\u0000org.eclipse.jdt.ui.javaPostfixProposalCategory\u0000org.eclipse.jdt.ui.javaAllProposalCategory\u0000org.eclipse.jdt.ui.javaTypeProposalCategory\u0000org.eclipse.jdt.ui.javaNoTypeProposalCategory\u0000org.eclipse.jdt.ui.javaChainProposalCategory\u0000
@@ -93,6 +96,9 @@ semanticHighlighting.typeArgument.enabled=true
 semanticHighlighting.typeParameter.bold=false
 semanticHighlighting.typeParameter.color=191,164,164
 semanticHighlighting.typeParameter.enabled=true
+<<<<<<< HEAD
+>>>>>>> cf92c83911f4570e95feb557aea110d8f536b219
+=======
 >>>>>>> cf92c83911f4570e95feb557aea110d8f536b219
 sourceHoverBackgroundColor=47,47,47
 spelling_locale_initialized=true
