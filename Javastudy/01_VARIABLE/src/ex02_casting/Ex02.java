@@ -9,7 +9,7 @@ public class Ex02 {
 //		실수를 정수로 변환할 때 강제로 진행한다.
 //		강제로 변환할 변수 앞에 괄호를 붙이고 변환할 데이터타입을 작성한다.
 
-		int score = 256;
+		int score = 256; // 2비트로 100 000 000
 		byte realScore = (byte) score;
 		System.out.println(realScore);
 
