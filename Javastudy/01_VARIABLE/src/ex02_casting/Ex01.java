@@ -16,7 +16,9 @@ public class Ex01 {
 		int score = 100;
 		double realScore = score; // 4바이트 int가 8바이트 double로 promotion된다.
 		System.out.println(realScore);
-
+		
+		
+		
 	}
 
 }

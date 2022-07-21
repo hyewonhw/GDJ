@@ -1,4 +1,4 @@
-package ex010_branch;
+package ex01_branch;
 
 public class Ex01_if {
 
