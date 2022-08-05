@@ -3,25 +3,25 @@ package ex04_condition;
 public class Ex01 {
 
 	public static void main(String[] args) {
-
-//		비교 연산자 
-//		초과   : >
-//		미만   : <
-//		이상   : >=
-//		이하   : <=
-//		같다   : ==
-//	    다르다 : !=
-//		연산 괄과는 boolean(true, false)
-//		
+		
+		// 비교 연산자 (등호가 앞에 오는 경우는 없음, 항상 뒤에옴)
+		// 초과   : >
+		// 미만   : <
+		// 이상   : >=
+		// 이하   : <=
+		// 같다   : ==
+		// 다르다 : !=
+		// 연산 결과는 boolean(true, false)
+		
 		int a = 7;
 		int b = 2;
 		
-		boolean result1 = a >  b ; // true
-		boolean result2 = a <  b ; // false
-		boolean result3 = a >= b ; // true
-		boolean result4 = a <= b ; // false
-		boolean result5 = a == b ; // false
-		boolean result6 = a != b ; // true
+		boolean result1 = a > b; // true
+		boolean result2 = a < b; // false
+		boolean result3 = a >= b; // true
+		boolean result4 = a <= b; // false
+		boolean result5 = a == b; // false
+		boolean result6 = a != b; // true
 		
 		System.out.println(result1);
 		System.out.println(result2);
@@ -31,8 +31,6 @@ public class Ex01 {
 		System.out.println(result6);
 		
 		
-		
-
 	}
 
 }

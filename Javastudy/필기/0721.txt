@@ -1,0 +1,211 @@
+1. for 문 (연습많이하기)
+***for(int n = 1; n <= 10; n++)*** 
+int n=1 : 초기문 (한번), 
+n <= 10 : 조건문 (반복), 종료조건, n이 10이하
+n++ : 증감문 (반복)
+
+초기문에서 작은숫자 조건문에서 큰숫자 입력이 일반적
+
+
+String star = "";
+star += "★";
+star += "★";
+star += "★";             => 별이 누적
+
+String star;
+star += "★";
+star += "★";
+star += "★";             => star초기값이 설정되지않아서 실행 불가     
+
+
+2. while문
+
+3. break문
+//형태 예시
+while(true) {                      // 무한루프
+	if(조건문) {
+		break;
+	}
+}
+System.out.println();
+
+
+4. continue 문 (필요없)
+//형태 예시
+while( ) {
+	a;
+	b;
+	c;
+	continue; //abc만 실행하고 다시 while()문으로 이동한다
+	d;
+	e;
+	f;
+	g;			
+}
+
+******
+int total =0;
+int n = 0;
+while(n < 100) {
+			
+	n++;
+			
+	if(n % 3 == 0) {
+		continue;
+	}
+		
+	total += n;
+			
+}
+		
+System.out.println("합계 " + total);       => 이 코드를
+
+******
+int total =0;
+int n = 0;
+while(n < 100) {
+			
+	n++;
+			
+	if(n % 3 != 0) {
+		total += n;
+	}
+}                                                
+System.out.println("합계 " + total);      => 이렇게 대체가능해서 안씀
+
+5. 중첩 for문
+
+6. random 
+ 1) 확률 처리하기
+ 2) 난수 값 생성 
+// Math.random()	  	   0.0 <= n < 1.0
+// Math.random() * 5              0.0 <= n < 5.0        
+// (int)(Math.random() * 5)         0 <= n < 5
+// (int)(Math.random() * 6) + 1     1<= n <6              => 주사위원리	
+
+
+// 아스키코드표
+유니코드?
+'0' = 48
+'A' = 65
+'a' = 97
+
+7. 시스템
+ 1) 타임스탬프 : long 타입의 정수값
+    System.currentTimeMillis();
+ 2) 나노타임
+    System.nanoTime();
+
+8. Date 
+  1) java.utill
+    Date   => 이렇게 쓰고 ctrl + space bar => class위에 import 생성 완료
+  2) java. spl
+    Date   => 이렇게 쓰고 ctrl + space bar => class위에 import 생성 완료
+    Date now = new Date     =->   입력후 사용법 모를땐 ctrl + space bar 
+
+================================================
+// 연습 01 (for문)
+// 10 ~ 1 ex)10987654321
+
+
+// 연습 02 (for문)
+// 구구단 7단 출력
+
+
+// 연습 03 (for문)
+// 1 ~ 100 사이의 모든 3의 배수만 출력하기
+// 힌트 : 3으로 나눈 나머지가 0인 숫자
+
+
+// 연습 04 (for문)
+// 1 ~ 100 모든 정수 더하기 (5050 출력)
+// 아래코드 참고
+int wallet = 0;
+wallet += 1000;
+wallet += 2000;
+wallet += 3000;
+System.out.println(wallet);
+
+
+// 연습 05 (for문)
+// begin ~ end 모든 정수 더하기
+// befin과 end중 누가 큰 지 모르는 상황
+// 출력값 5050 
+// begin을 end보다 항상 작은 값으로 바꾼 뒤 begin ~ end 모두 더하기 진행
+// begin이 end보다 크다면 begin과 end를 교환		
+
+
+// 연습 06 (for문)
+// 평점 (1 ~ 5)에 따른 별(★) 출력하기
+
+
+// 연습 07 (while문)
+// 통장잔액 79350원 (랜덤으로도 풀어보기)
+// 특정금액 450원씩 계속 빠져나감
+// 이때 최종 잔액
+
+
+// 연습 08 (break문) 랜덤으로 풀어보기
+// 모금목표 : 100000원
+// 한 번에 30원씩 모금
+// 1회 모금 30원       현재 30원
+// 2회 모금 30원       현재 60원
+// ...
+
+
+// 연습 09 (continue)
+// 1 ~ 100  모두 더하기
+
+
+// 연습 10 (continue)
+// 1 ~ 100 중에서 3의 배수를 제외하고 모두 더하기
+
+
+// 연습 11 (nested_for)
+// 구구단 출력
+// 2x1=2
+// 2x2=4
+// ...
+// 9x9=81
+
+
+// 연습 12 (nested_for)
+// 구구단 출력
+// 2x1=2
+// 2x2=4
+// ...
+// 5x5=25
+
+
+// 연습 13 (label을 이용한 풀이)(nested_for)
+// 연습 12 변형문제
+// 9x9=81까지 나오는 구구단에서 5x5=25까지만 출력되게
+
+
+// 연습 14 (가로로 출력)(nested_for)
+// 2x1=2	3x1=3  ...  9x1=9
+// 2x2=4    3x2=6  ...  9x2=18
+// ...
+
+
+// 연습 15 (Math.random())
+// 확률 처리하기
+// 10% 확률로 "대박", 나머지 90 % 확률로 "쪽박" 출력하기
+
+
+// 연습 16 (Math.random())
+// 주사위 2개 던지기
+
+
+// 연습 17 (Math.random())
+// 6자리 숫자 인증번호 만들기
+// String code = "123456" =>이런 형태로 출력 되어야함 
+
+
+// 연습 18 (Math.random() + 유니코드)
+// 6자리 영문(대문자 + 소문자) 인증번호 만들기
+
+
+
+
+

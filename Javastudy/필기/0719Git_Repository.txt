@@ -1,0 +1,83 @@
+원격저장소 - github.com의 특정 레파지토리 (저장소)
+
+     ↑
+
+로컬저장소 - pc의 특정 폴더
+
+
+
+1. 로컬 레파지토리 만들기
+  1) C : GDJ 디렉터리로 이동한다.
+     cd .. (..은 상위폴더로 이동하겠다)
+  2) 로컬 레파지토리로 만든다
+     git init
+
+2. 사용자 등록하기
+  1) 사용자 이름 git config user.name 'name'
+  2) 사용자 이메일 git config user.email'email'
+
+3. 스태이징 하기
+  1) git add 파일명 - 특정 파일만 스태이징 하기
+  2) git add . - 모든 파일을 스태이징 하기
+
+4. 커밋하기
+  1) git commit
+  2) vim 편집기 열림
+  3) a 눌러 추가모드로 진입
+  4) 간단한 commit message 작성 후 esc눌러 추가모드 종료
+  5) :wq를 눌러서 vim편집기에서 빠져나옴
+         혹은
+     git commit -m '커밋메시지'(오늘 날짜로 했음)
+
+=====여기까지가 로컬 레파지토리 작업=====
+
+1. 원격 레파지토리 만들기
+  1) github.com 회원가입 및 로그인
+  2) Create Repository
+    (1) name : GDJ
+    (2) view : public
+    (3) add README.md
+    (4) add .gitignore  // 여기있는거 올리지마라
+
+2. 원격 레파지토리 주소 확인
+  https://github.com/hyewonhw/GDJ.git
+
+3.Persnal - Access - Token 만들기
+  만든 다음 메모장에 보관해 둬야 함.
+
+========== 여기까지 원격 레파지토리 작업 ==========
+      (#=주석)
+====== 다시 로컬 레파지토리에서 작업 ======
+
+1. 원격 레파지토리 등록하기
+    git remote add oringin '원격 레파지토리 주소'
+2. 원격 레파지토리 내용을 로컬 레파지토리로 내려받기
+    git pull origin main --allow -unrealted-histories(tab키)
+    vim에디터 뜨면 :wq 쳐서 종료하고 나오기 (merge=합치겠다)
+3. 업데이트 된 로컬 레파지토리 내용을 원격 레파지토리로 올리기 
+    git push origin main
+
+
+=====git hub 홈페이지에서 ignore추가=====
+# images 폴더
+images                                  두가지 추가
+#installer폴더                            (#이 주석)
+installer 
+
+
+======0720======
+git bash 를 GDJ폴더 우클릭해서 실행하면 바로 C드라이브 GDJ에서 실행됨
+git add.(.=모든걸 올리겠다.)->staging(무대로올려서)->commit(커밋하겠다)
+
+
+
+======수업 후 git에 올릴 때======
+1. git add .
+2. git commit -m '날짜'
+3. git push origin main
+
+또는 
+
+1. git commit -am 
+  (add와 commit을 한번에 하겠다 / 한번 add따로 commit따로 실행했었기 때문에 가능)
+2. git push origin main

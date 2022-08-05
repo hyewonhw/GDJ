@@ -6,50 +6,46 @@ public class Ex02_Date {
 
 	public static void main(String[] args) {
 		
-//		클래스 명명 규칙
-//		패키지 다음에 마침표(.)를 적고 클래스명을 적는다.
+		// 클래스 명명 규칙
+		// 패키지 다음에 마침표(.)를 적고 클래스명을 적는다.
 		
-//		java.lang.System.out.println("h");
+		java.lang.System.out.println("Hello");  // 이게 원래 명명 규칙
 		
-//		예외 규칙
-//		java.lang 패키지에 소속된 클래스들은 패키지를 생략할 수 있다.
-	    
-//		java.util 패키지의 Date 클래스
-//		1. java.uill.Date
-//		2. import java.util.Date;
-//		Date
+		// 예외 규칙
+		// java.lang 패키지에 소속된 클래스들은 패키지를 생략할 수 있다.
 		
-//		클래스와 객체
-//		1. 클래스 : 객체를 만들기 위한 설계도            // 전체적인 틀?
-//		2. 객체   : 클래스를 이용해서 만든 실제 객체     // 내용물?
-//		3. 일반적인 생성 방법
-//		클래스 객체 = new 클래스 ();
+		// java.utill 패키지의 Date클래스 명명
+		// 1. java.utill.Date 
+		// 2. import java. utill.Date;   => 자바에서 자동완성
+		//    Date                       => 이렇게 쓰고 ctrl + space bar   => class위에 import 생성 완료
 		
-//		메소드 사용
-//		1. 클래스를 이용해서 호출
-//			System.out.println()
-//			System.currentTimeMillis()
-//			System.nanoTime()
-//			Math.random()
-//		2. 객체를 만들어서 호출
-//		String str = new String ("hello"); //클래스 String, 객체 str
-//		str.equals("heelo")
-//		
-//		Date now = new Date(); // 클래스 Date, 객체 now
-//		now.getMonth()
-//		
-//		StringBuilder sb = new StringBuilder(); // 클래스 StringBuilder, 객체 sb
-//		sb.append()
+		/////////////////////////////////////
 		
-//		String str = new String ("hello");       //클래스 String, 객체 str
-//		System.out.println(str.equals("hello"));
+		// 클래스와 객체
+		// 1. 클래스 : 객체를 만들기 위한 설계도
+		// 2. 객체   : 클래스를 이용해서 만든 실제 객체
+		// 3. 일반적인 객체생성 방법 
+		//	클래스 객체 = new 클래스();
 		
-//		Date 클래스와 now 객체
+		// 메소드 사용
+		// 1. 클래스를 이용해서 호출
+		// 	System.out.ptintln();
+		//	System.currentTimeMillis();
+		// 	System.nanoTIme();
+		// 	Math.random()
+		// 2. 객체를 만들어서 호출
+		// 	String str = new String("Hello"); // 클래스 String, 객체 str
+		//		str.equals("Hello")
+		// 	Date now = new Date(); // 클래스 Date, 객체 now
+		//		now.getMonth()
+		// 	StringBuilder sb = new StringBuilder();   // 클래스 StringBuilder,  객체 sb
+		//		sb.append()
+		
+		
+		// Date 클래스와 now 객체 (객체는 변수이름 정하듯 정하면됨)
 		Date now = new Date();
-		System.out.println(now);
-		
-		
-		
-	}// main
+		System.out.println(now);		
+
+	}
 
 }

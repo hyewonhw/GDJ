@@ -1,0 +1,198 @@
+1. 정적바인딩 / 동적바인딩 차이
+
+2. 다운캐스팅
+ex) Car - 슈퍼클래스 / Bus - 서브클래스
+    ((Bus)Car) 형태로 캐스팅
+-- 인스턴스화 --
+메모리에 객체공간이 만들어지는 것
+객체 또는 인스턴스는 같은 말
+instanceof
+
+ex11 Main
+
+for(int i = 0; i < cars.length; i++) {
+	if(cars[i] instanceof Car) {
+		cars[i].drive();
+	} else if (cars[i] instanceof Ev) {
+		((Ev) cars[i]).charge();
+	}else if (cars [i] instanceof Hybrid) {
+		((Hybrid) cars[i]).addOil();
+	}
+}
+ 슈퍼클래스를 먼저 체크하면 출력시 drive만 10번나옴
+이럴때 서브클래스부터 체크하면 됨
+Hybrid -> Ev -> Car순서
+슈퍼클래스 - 서브클래스 관계 잘 이해
+
+3. object class
+모든걸 저장할 수 있는 만능타입
+int,long ... 여러타입으로 저장되어야할 때 아예 object 사용해버리기
+이거저거 다 저장하겠다 
+Object에 저장된 객체는 캐스팅해서 사용한다.
+(항상 다운캐스팅해서 사용해야 호출 가능)
+디버깅용도로 많이 사용
+source에서 toString 만들어줌 (equals도) 
+객체 정보 확인을 위해서는 toString()메소드를 만든다.
+객체 정보 비교를 위해서는 equals()메소드를 만든다.
+
+4. abstract
+public double getArea() { 
+     return 0;
+}
+추상메소드로 바꾸는방법
+본문 return 지우고
+중괄호 지우고 세미콜론으로 끝
+public 뒤에 abstract 추가
+클래스도 public 뒤에 abstract 추가해 추상클래스로 변경
+
+===롬복===
+이클립스에 설치해야 함.
+Getter/Setter/Constructor 등을 쉽게 만들어 줌.
+
+설치과정
+1. 명령프롬포트 열기
+C:\Users\GDJ54>cd C:\GDJ\installer\jar
+C:\GDJ\installer\jar>java -jar lombok-1.18.18.jar
+javac켜지면 이클립스 인스톨해주기
+
+제거방법
+eclipse폴더에서 lombok.jar제거
+eclipse.ini열어서 javaagent:~lombok줄 지우기
+
+안될때 이유
+자바에이전트 경로에 한글이 포함되면 안됨
+경로에 공백이 포함되어있으면 안됨
+컴퓨터 계정이름이 한글로되어있으면 안됨
+잘못깔면 이클립스 안열림 -> 자르제거하기
+
+Bean = Vo = Dto 다 같은거/ 데이터 보관용도
+
+자바프로젝트 우클릭해서
+ 빌드패스에 컨피규어 빌드패스
+라이브러리에서 클래스패스 ->애드익스터널자르
+자르경로 에서 데려다가 쓰기
+
+===보충수업===
+Library 클래스에서 여태와다르게 private로 메소드를 가림
+1누르고 enter쳤다는 가정하에
+sc.nextLine() 는 enter를 잡아먹음 -> 불필요한 엔터 잡아줌
+
+인덱스 2번 삭제시 인덱스3번에 있는 책을 2번으로 끌어옴(하나씩 덮어쓰기)
+ex) books[2]      <-       books[3]
+    3번의 책정보             3번의 책정보
+같은내용이 둘이기 때문에 books[3] = null; 초기화 해주기/ idx--
+copy(원본, 복사되는 곳, idx-bookNo-1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
