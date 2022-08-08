@@ -1,6 +1,6 @@
 package quiz04_employee;
 
-public class Employee {
+public abstract class Employee {
 	
 	private int empNo;		 // 사번
 	private String name;	 // 이름

@@ -1,0 +1,118 @@
+===컬렉션 프레임워크===
+
+ ==list==
+
+Exam02 library 응용
+
+배열 -> list
+Book[] books 
+-> List<Book> books
+
+Library.java
+addBook()불가능
+-> 가득차면 알아서 늘려버림
+->FullCheck 없어짐
+
+removeBook() 
+-> Empty Check 가능 
+-> 예외처리로 변경
+-> list제거방법 두가지로 살펴보기
+removeBookByIndex()
+-> 인덱스 정보를 이용해서 제거
+removeBookByObject()
+->객체(Book)정보를 이용해서 제거
+
+findBook()
+-> Empty Check 가능 
+-> 예외처리로 변경
+
+printAllBooks()
+-> Empty Check 가능 
+-> 예외처리로 변경
+
+*추가
+modifyBook() 
+-> 책 제목을 입력 받아서 일치하는 책의 정보를 변경
+
+객체간의 비교를 할때 equals필요
+
+==set==
+순서가 없는 목록 -> index가 없다.
+요소 중복저장 불가능
+
+==hash==
+자바의 hashCode ->
+객체의 참조값(메모리주소)으로 hash값을 만들어냄
+중복을 배제할땐 set가 최고
+
+==map==(중요! 많이쓰임)
+mapping
+만드는거 중요 -> put()메소드로 만듬
+
+
+Key와 Value로 구성된 하나의 map
+idx처럼 키값을 정해져있는게아니고 직접 키값을 만들어서 사용해야함 중복되지않음
+
+데이터처럼사용할 인덱스를 만들어야함
+
+map은 Entry : key + value
+   ↓
+Entry가 무수히 많은것임
+
+
+// Entry 순회
+for(Entry entry : map.entrySet())
+           entry.getKey()
+           entry.getValue()
+
+// Key 순회
+for(String key : map.keySet())
+            Key
+           map.get(key)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    file
+------------------------
+Stream
+------------------------
+Network
+------------------------
+END Java
+-------------------------
+API - 공공 API / 네이버 / 카카오 등
+JSON - JavaScript Object Notation(자바의 라이브러리 필요)
+-------------------------
+DB - 전체 MAX 2주 (9월 초 종료)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -5,6 +5,9 @@ public class Temporary extends Employee {
 	private double hourPay;
 	private int workTimes;
 	
+	public Temporary(int empNo, String name) {
+		super(empNo, name);
+	}
 	
 	public double getHourPay() {
 		return hourPay;

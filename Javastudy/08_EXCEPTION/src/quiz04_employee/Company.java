@@ -35,7 +35,7 @@ public class Company {
 			double hourPay = sc.nextDouble();
 			System.out.println("근무시간 >>> ");
 			int workTimes = sc.nextInt();
-			Tamporary temporary = new Temporary(empNo, name);
+			Temporary temporary = new Temporary(empNo, name);
 			temporary.setHourPay(hourPay);
 			temporary.setWorkTimes(workTimes);
 			employees[idx++] = temporary;
@@ -47,7 +47,7 @@ public class Company {
 	
 	public void dropEmployee() throws EmployeeException { 
 		if(idx == 0) {
-			throw new EmpolyeeException("Empty", 2);
+			throw new EmployeeException("Empty", 2);
 		}
 		System.out.println("삭제할 사원번호 >>> ");
 		int empNo = sc.nextInt();
