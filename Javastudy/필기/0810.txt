@@ -1,0 +1,70 @@
+===file===
+file통해서 디렉토리만듬
+
+dir.exists() -> 존재한다.
+dir.exists() == false -> 존재하지 않는다.
+if(!dir.exists())  -> 존재하지 않는다.
+
+Unhandled exception type IOException   ->  checked exception  
+
+계층관계여서 폴더가 부모
+
+DecimalFormat
+
+===스트림(stream)===
+바이트스트림/문자스트림
+
+자바프로그램 기준으로 입력스트림/출력스트림
+
+ex)
+키보드 -> 입력스트림System.in -> 자바프로그램 -> 출력스트림System.out -> 모니터
+
+Resource leak: 'fw' is never closed
+닫아줘야함 fw.close()
+
+close를 try로 올려서 try에서 마무리 가능 
+
+ctrl + shift + o 
+import 없는거 넣어주고 필요없는건 지워주는 단축키
+
+
+===XMLWriter===
+<product>
+    <number>100</number>	-> 요소(Element)라고 부름
+    <name>새우깡</name>
+    <price>1500</price>
+</product>
+     ↓
+<product> ~ </product> -> 요소 (Element) 라고 부름
+<number>, <name>, <price> -> 얘네도 각각 요소 (Element) 라고부름
+
+product.appendChild(number); 
+-> product의 자식으로 추가한다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
