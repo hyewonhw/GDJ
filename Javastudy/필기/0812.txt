@@ -1,0 +1,50 @@
+===outputstream===
+출력스트림의 특징 : 사용하면 파일 만들어줌, 파일이 있건없건 새로 만듦
+
+String을 byte로 바꾸는걸 지원함 getByte
+문자 받아온다 -> UTF-8 받아옴
+
+===inputstream===
+new String() 에서 byte[] b, 0, read 가능
+0번 index부터 읽어들인만큼만 사용
+
+기본이 byte이기 때문에 텍스트를 주고받으려면 중간에 변환기(Reader)필요
+
+
+System.in은 문자 스트림 / 바이트스트림?
+
+Scanner코드 넣어서 확인해보면
+byte임을 알 수 있음 
+키보드에 연결하는 스트림
+
+***스트림개념?
+
+FileInputStream -> DataInputStream -> readUTF 했는데 한글이 안깨짐
+바이트 스트림인데 read 나 write 안띄우고 문자를 읽어들일수가있다??!
+바이트스트림의 문자처리를 데이터스트림으로 할 수 있음
+서버에서 보낸거 데이터에 저장해서 utf로 읽어버림
+
+===network===
+ex01_network    m2 외우기
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

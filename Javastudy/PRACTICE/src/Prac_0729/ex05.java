@@ -1,9 +1,5 @@
 package Prac_0729;
 
-import java.util.Scanner;
-
-import sun.java2d.opengl.WGLSurfaceData.WGLVSyncOffScreenSurfaceData;
-
 public class ex05 {
 
 	public static void main(String[] args) {
@@ -48,19 +44,22 @@ public class ex05 {
 		for(int i = 1; i < scores.length; i++) {
 			total += scores[i];
 			if(max < scores[i]) {
-				
+				max = scores[i];
+				top = i;
+			}
+			if(min > scores[i]) {
+				min = scores[i];
+				bottom = i;
 			}
 		}
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		double average = (double)total / scores.length;
+		System.out.println("평균 : " + average + "점");
+		System.out.println("1등 점수 : " + max + "점");
+		System.out.println("1등 이름 : " + names[top]);
+		System.out.println("꼴등 점수 : " + min + "점");
+		System.out.println("꼴등 이름 : " + names[bottom]);
+
 	}
 
 }

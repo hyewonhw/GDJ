@@ -1,0 +1,88 @@
+===JSON===
+DB에서 읽어온 데이터도 get+type으로 결부
+ex)getString, getBoolean
+
+XML새우깡 -> JSON
+[      // products = 배열
+    {     // product = 객체
+     "number" : 100,
+     "name":"새우깡",
+     "price" : 1500
+     }
+ ......
+]
+
+get()메소드는 Object를 반환하기 때문에 JSONObject가 아닌 그냥 Object로 향상for문 
+반복문 안에서 JSONObject 만들어줌
+
+JSONArray(collection) -> 
+set.
+
+===reader===
+<-> writer
+마찬가지로 Exception처리 필요
+
+13울 5개씩 읽는다면 
+첫번째 return 값 5
+두번째 return 값 5
+세번째 return 값 3
+네번째 return 값 -1
+
+===CVSReader===
+
+===XMLReader===
+NodeList는 배열과 비슷
+nodeList[i]가 아닌
+nodeList.item(i)인거 주의
+
+===JSONReader===
+writer보다 reader위주로 공부
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

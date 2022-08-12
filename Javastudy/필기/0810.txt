@@ -27,6 +27,8 @@ close를 try로 올려서 try에서 마무리 가능
 ctrl + shift + o 
 import 없는거 넣어주고 필요없는건 지워주는 단축키
 
+공공데이터 csv xml json
+csv와 json 위주
 
 ===XMLWriter===
 <product>
@@ -42,10 +44,31 @@ product.appendChild(number);
 -> product의 자식으로 추가한다.
 
 
+===JSON의 표준===
+https://www.json.org/json-en.html
+홈페이지에서 사용법 볼수있음
+[
+   {
+        "number": "100"
+        "name": "새우깡"
+        "price": "1500"
+    },
+    {
+        "number": "101"
+        "name": "양파링"
+        "price": "2000"
+    },
+    {
+        "number": "102"
+        "name": "홈런볼"
+        "price": "2000"
+    }
+]
+product.json 
+-> json은 Library 있음
+jar파일
 
-
-
-
+프로퍼티 : 데이터
 
 
 
