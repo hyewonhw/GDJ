@@ -5,20 +5,24 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 
 public class Main {
 
-	public static void m1() {
+	public static void m1() {		// URL
 		
 		// URL
 		// 1. Uniform Resource Locator
 		// 2. 정형화된 자원의 경로
 		// 3. 웹 주소를 의미
 		// 4. 구성
-		//  프로토콜: //     호스트    /  서버경로  ?  파라미터=값&파라미터=값
+		//  프로토콜: //호스트(:포트번호)/  서버경로  ?  파라미터=값&파라미터=값
 		//	   https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=%EB%82%A0%EC%94%A8
 		//    1) https : secure http, 하이퍼텍스트 전송 프로토콜(통신규약)
 		//    2) 호스트 : 서버주소
@@ -36,13 +40,13 @@ public class Main {
 			System.out.println("호스트 : " + url.getHost());
 			System.out.println("파라미터 : " + url.getQuery());
 			
-		} catch(MalformedURLException e) {
+		} catch(MalformedURLException e) {		// 형식이 잘못됐다는 예외처리
 			System.out.println("API 주소 오류");
 		}
 	
 	}
 	
-	public static void m2() {
+	public static void m2() {		// HttpURLConnection + 응답 코드
 		
 		// HttpURLConnection 클래스
 		// 1. 웹 접속을 담당하는 클래스
@@ -81,7 +85,7 @@ public class Main {
 		
 	}
 	
-	public static void m3() {
+	public static void m3() {		// HttpURLConnection과 Stream 	(암기)
 		
 		// HttpURLConnection과 스트림
 		
@@ -94,7 +98,8 @@ public class Main {
 			InputStream in = con.getInputStream(); 		
 			
 			// 문자 입력 스트림으로 변환
-			InputStreamReader reader = new InputStreamReader(in);
+			InputStreamReader reader = new InputStreamReader(in);		
+		
 			
 			// 모두 읽어서 StringBuilder에 저장
 			StringBuilder sb = new StringBuilder();
@@ -119,13 +124,41 @@ public class Main {
 		} catch (MalformedURLException e) {
 			System.out.println("API 주소오류");
 		} catch (IOException e) {
+			System.out.println(e.getMessage());
 			System.out.println("API 접속 및 연결 오류");
 		}
 
 	}
 	
+	public static void m4() {		// encoding + decoding
+		
+		// 인코딩 : UTF-8 방식으로 암호화
+		// 디코딩 : UTF-8 방식으로 복호화
+		// 원본데이터 -> 인코딩 -> 전송 -> 디코딩 -> 원본데이터
+		
+		try {
+			
+			// 원본데이터
+			String str = "한글 english 12345 !@#$+";
+			// 출력 -> %ED%95%9C%EA%B8%80+english+12345+%21%40%23%24%2B
+			// 공백은 +로 나옴
+			
+			// 인코딩
+			String encode = URLEncoder.encode(str, "UTF-8");	// 인코드할거, 인코드방식
+			System.out.println(encode);
+			
+			// 디코딩
+			String decode = URLDecoder.decode(encode, StandardCharsets.UTF_8); 		// 원본이아닌 인코드 데이터를 디코딩			
+			System.out.println(decode);
+			
+		} catch(UnsupportedEncodingException e) {		// UTF를 UFT 라고 적는 등 오타
+			e.printStackTrace();
+		}
+		
+	}
+	
 	public static void main(String[] args) {
-		m3();
+		m4();
 	}
 
 }

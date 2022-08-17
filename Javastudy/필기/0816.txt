@@ -1,0 +1,108 @@
+===network===
+값은 인코딩된 유니코드값으로 표기
+
+if(con.getResponseCode() == HttpURLConnection.HTTP_OK
+
+stream in : 서버측의 정보를 내려받음
+(inputStream -> 기본단위byte
+inputStreamReader(char) -> 문자처리용 으로 받아주기위해 리더사용)
+
+===인코딩,디코딩===
+
+
+===API===
+공공데이터포털 오픈 API 활용신청
+
+파라미터=Encoding인증키
+파라미터=URLEncoder.encode(Decoding인증키, "UTF-8")
+-> 위 두개가 같은 것
+
+요청 
+->어떤 데이터를 (처리해)달라고 요청하는것)
+클라이언트 -> 서버
+(알아야할것)
+요청할 주소 : apiURL
+요청 파라미터(서버로 보내줄 데이터)
+    필수 / 선택 으로 분리되어있음
+
+[apiURL?파라미터=값&파라미터=값 ...]
+api문서보고 이걸 만들어 낼 수 있는가
+
+content-type이나 application/xml 같은건 이미 정해진 규격같은거임
+외워야하는거
+
+get방식
+주소창에 붙여버리는 방식(?pageNo=0)
+post방식
+회원가입, 로그인에 쓰이는 방식
+
+호스트:포트번호
+ 포트번호는 생략가능
+
+Server가 Client에게 Welcome 메시지를 보냄
+-> 
+
+Client가 Scanner를 이용해 입력 받은 메시지를  Server로보냅니다.
+-> OutputStream out = ClientSocket.getOutputStream();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
