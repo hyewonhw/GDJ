@@ -17,8 +17,9 @@ public class Main {
 		// 임무 > C:\\storage에 저장하기
 		
 		try {
+			
 			// 접속
-			String apiURL = "http://kma.go.kr/XML/weather/sfc_web_map.xml";
+			String apiURL = "http://www.kma.go.kr/XML/weather/sfc_web_map.xml";
 			URL url = new URL(apiURL);
 			HttpURLConnection con = (HttpURLConnection)url.openConnection();
 		
@@ -48,6 +49,7 @@ public class Main {
 		} catch (MalformedURLException e) {
 			System.out.println("API 주소오류");
 		} catch(IOException e) {
+			System.out.println(e.getMessage());
 			System.out.println("API 서버 오류");
 		}
 	}

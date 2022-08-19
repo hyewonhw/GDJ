@@ -1,0 +1,35 @@
+===json===
+기본 형태가
+{property : value}
+
+--->api1.json
+{"response":{"header":{"resultCode":"03","resultMsg":"NODATA_ERROR"}}}
+
+----->들여쓰기
+{
+  "response":{
+    "header":{
+      "resultCode":"03",
+      "resultMsg":"NODATA_ERROR"
+    }
+  } 
+}
+
+: 객체가 3개 = JSONObject가 3개
+
+JSONObject는 file객체를 읽어들이지못해서 StringBuilder에 보관해서 sb의 toString을 불러움
+
+라이브러리가 줄바꿔주는 기능포함
+
+이클립스에선 서비스키 디코딩
+
+포스트맨에선 서비스키 인코딩
+
+===========================
+관계형 DB (RDB)
+    - Oracle(수업)
+    - MS-SQL
+    - MySQL(예정)
+    - mariaDB
+==========================
+DB - JDBC - Web(HTML, CSS, JavaScript(jQuery))

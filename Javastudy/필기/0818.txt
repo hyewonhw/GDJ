@@ -1,0 +1,44 @@
+===API===
+요청메세지(파라미터) -> 클라이언트가 서버에 보내줘야하는 데이터
+
+코로나 
+하나의 날짜가 하나의 item태그로 구성되어있음
+
+getElementsByTagName 에서 Element가 아닌 Elements인건 List이기때문
+
+코로나 -> 날짜 8/8~8/12로 데이터 얻어보기--->api2.xml
+
+BufferedReader써야 readline 사용 가능
+
+1. response태그 알아내기  -->이름 root, 타입 element
+
+기상청 = 오늘날짜
+
+
+node가 부모
+element가 자식
+줄바꿈이 node에는 포함되지만 element 에는 포함되지않음
+node는 태그, 줄바꿈
+element는 태그 (하위개념)
+getElementsByTagName()은 Node에서 지원하지않고 element에서 지원함
+노드에는 태그가 아닌것이 포함되어있기 때문에getElementsByTagName("category")불가능함
+element로 다운캐스팅 필요
+
+===보충수업===
+prac3 -> 영화진흥위원회 API에서 키 발급받기
+주소 http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.xml (또는 .json)
+
+키
+홈페이지 발급관리메뉴에 있음
+
+응답구조가 태그
+
+
+
+
+
+
+
+
+
+
