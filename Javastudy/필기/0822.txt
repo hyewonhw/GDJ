@@ -1,0 +1,181 @@
+===oracle===
+명령프롬포트에서도 SQLPlus가 열리는 이유? sql은path가 자동으로설정됨
+
+path설정 자동->ORA_HOME으로 환경변수 수정
+
+새로만들기
+변수이름 ORA_HOME
+변수 값 C:\oraclexe\app\oracle\product\11.2.0\server
+
+
+conn
+
+conn sys /as sysdba
+
+시스템계정으로 접속하겠다
+비밀번호 모를때 접속방법
+sqlplus / as sysdba
+
+---> 정해진 구문이있기때문에 외워야함
+
+===사용자 생성===
+CREATE USER USER1 IDENTIFIED BY 1111; 
+-->유저1번 사용자를 만들고 비밀번호를 1111로 줌
+(CREATE USER 사용자명 IDENTIFIED BY 비밀번호;)
+생성후
+conn user1/1111
+----> 접속 시도하면 에러 권한이 없기때문
+
+
+===접속 권한주기===
+GRANT CONNECT TO USER1;
+---> USER1에게 접속권한을 줌
+(GRANT CONNECT TO 사용자명;)
+권한주고 접속시도하면 접속가능
+USER1은 접속권한만 받았기 때문에
+
+
+===권한회수===
+REVOKE CONNECT FROM USER1;
+--> USER1으로부터 접속 권한을 회수한다
+(REVOKE CONNECT FROM 사용자명;)
+
+
+===자원===
+GRANT RESOURCE TO USER1;
+-->자원을 사용할수있게하는 구문
+(GRANT RESOURCE TO 사용자명;)
+
+GRANT CONNECT, RESOURCE TO USER1;
+-->접속과 자원사용을 동시에 (일반적인 관리자)
+(GRANT CONNECT, RESOURCE TO 사용자명;)
+
+
+===자원사용가능한지확인===
+CREATE TABLE A_TBL(NO NUMBER);
+---> A_TBL이라는 태이블을 생성하는 구문
+(CREATE TABLE 태이블명(NO NUMBER);)
+동일한 이름의 객체(태이블)도 사용자가 다르면 생성가능
+
+
+===삭제===
+DROP TABLE A_TBL;
+-->태이블 먼저 삭제
+--->USER2로 접속(SYSTEM이 TABLE을 가지고있는게 아니기때문)
+(DROP TABLE 태이블명;)
+
+DROP USER USER2;
+--> 가지고있는 태이블 이미 삭제돼서 비어있기 때문에 CASCADE 불필요
+(DROP USER 사용자명;)
+
+DROP USER USER1 CASCADE;
+--> 유저가 가지고 있는 것과 유저 삭제
+--->SYSTEM이 삭제해야함
+(DROP USER 사용자명 CASCADE;)
+
+
+===관리자권한===
+GRANT DBA TO USER1;
+--> USER1에게 관리자권한 줌
+--->관리자 권한을 받았으니 태이블, 사용자 생성가능 
+
+
+SELECT TABLE_NAME FROM DBA_TABLES;
+-->SYSTEM계정에 태이블만들었는지 확인하는 방법
+--->1687개면 정상 1688이라면 DROP하기
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
