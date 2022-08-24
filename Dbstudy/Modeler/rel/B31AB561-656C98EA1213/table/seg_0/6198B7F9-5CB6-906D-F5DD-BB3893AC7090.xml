@@ -1,0 +1,81 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6198B7F9-5CB6-906D-F5DD-BB3893AC7090" name="ORDERS">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-24 06:20:48 UTC</createdTime>
+<ownerDesignName>Modeler</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ORD_NO" id="8ABE37E0-BE65-0CD2-5A92-C9FF393ABE23">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-24 06:43:45 UTC</createdTime>
+<ownerDesignName>Modeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ORD_USER" id="B5D0103A-1B53-0CEC-5CA8-38B30E478BC7">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-24 06:43:45 UTC</createdTime>
+<ownerDesignName>Modeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PROD_NO" id="CA4003E5-69ED-694A-6B36-DFA7C04D8E99">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-24 06:43:45 UTC</createdTime>
+<ownerDesignName>Modeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F4D5017F-9FD3-612B-134A-29FCBFA3E79D" referredColumn="BE8AB790-203C-976E-CF35-0F4443E4ADC9"/>
+</associations>
+</Column>
+<Column name="ORD_DATE" id="4937ACE4-9B47-FAE1-689B-D9A6D8DEC2EC">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-24 06:43:45 UTC</createdTime>
+<ownerDesignName>Modeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="209F8E56-80B1-FF12-F24B-7319169C0C00" name="PK_ORDERS">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-24 06:43:45 UTC</createdTime>
+<ownerDesignName>Modeler</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8ABE37E0-BE65-0CD2-5A92-C9FF393ABE23"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="09486390-0C48-7B6A-F3B9-0EB5703F2D82" name="FK_ORDERS_PRODUCT">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-24 06:43:45 UTC</createdTime>
+<ownerDesignName>Modeler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CA4003E5-69ED-694A-6B36-DFA7C04D8E99"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
