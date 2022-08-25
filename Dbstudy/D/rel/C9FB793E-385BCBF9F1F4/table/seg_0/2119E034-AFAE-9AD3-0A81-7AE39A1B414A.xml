@@ -1,0 +1,141 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2119E034-AFAE-9AD3-0A81-7AE39A1B414A" schemaObject="246005AB-7BE5-F3A0-6155-0E036591B832" name="SCHEDULE">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:01:21 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<importedID>6270CCFC-A7D3-F273-1827-766447A43085</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="S_NO" id="249650A5-CA07-83CD-921D-31146EB08EF5">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:01:21 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<importedID>99B5D302-E30B-0818-5FBB-D87D398F9984</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,3,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="N_CODE" id="2E1E4A79-EEA9-08A3-6219-2CE671F7C82B">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:01:21 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<importedID>0AE96044-8EBD-7733-B459-2256C190F718</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,3,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6E98087F-93FD-8804-A0EB-9E3E67CF1D96" referredColumn="E8AD0671-7FF3-AAC4-5705-32F1E5A510CE"/>
+</associations>
+</Column>
+<Column name="E_CODE" id="AA3BC6C3-168B-78CD-2509-E67F24817A36">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:01:21 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<importedID>675411C6-891F-880F-2AB4-A2FB3618F987</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="71D73EE4-6588-F30A-5B40-1FD2BFF2CA4A" referredColumn="9E07015A-A396-C82B-E95A-99D16E0C7816"/>
+</associations>
+</Column>
+<Column name="S_START_DATE" id="DB2F8A0C-50C2-2A0C-DAA0-682E00E8662B">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:01:21 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<importedID>F650D7FB-CE9E-439E-E858-826E59292B28</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="S_END_DATE" id="646573E7-ACFC-39EB-21FB-A59765E77817">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:01:21 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<importedID>68BE84B0-145E-D080-F942-138C9FEB2210</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="S_INFO" id="D14BBAC5-8B8C-FDC2-BD26-63F048108741">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:01:21 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<importedID>11C6CACB-0CCC-CB18-C0CA-8BD96879A758</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9F8A4AC9-A51A-B920-3E11-1F7F37CF1CFB" name="PK_SCHEDULE">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:01:21 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<importedID>F6C3800B-E8CF-9A28-C190-DD12C9859EE6</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="249650A5-CA07-83CD-921D-31146EB08EF5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="21C24D2C-1BFA-9946-5FAB-8B86A2D0B41F" schemaObject="246005AB-7BE5-F3A0-6155-0E036591B832" name="PK_SCHEDULE">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:01:21 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<importedID>3C10EDC6-8D8F-75D2-100B-5250B9EA427F</importedID>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="249650A5-CA07-83CD-921D-31146EB08EF5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5ECCA9D9-3BEB-24F3-1AEC-F2A382496A71" name="FK_SCHEDULE_EVENT">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:01:21 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AA3BC6C3-168B-78CD-2509-E67F24817A36"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BBEDF2C9-5244-2EE0-61CB-45ECD6216C65" name="FK_SCHEDULE_NATION">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:01:21 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2E1E4A79-EEA9-08A3-6219-2CE671F7C82B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

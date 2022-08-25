@@ -1,0 +1,138 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F74E12A8-89DE-B82E-5FC0-C91B5020F0D3" schemaObject="246005AB-7BE5-F3A0-6155-0E036591B832" name="PLAYER">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:01:21 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<importedID>0B9F3929-AD1D-063C-FC79-B4BA4379437D</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="P_CODE" id="941FC675-1355-33F7-4D3C-0B4898FE27B2">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:01:21 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<importedID>8DA9DC43-3E77-A22D-0CB0-99C092C7400D</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,3,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="P_NAME" id="79B59968-D03C-C5EC-8877-5E5D279F3B6F">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:01:21 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<importedID>AD98D2E6-6949-B0E0-E143-CE4445224E88</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 BYTE</dataTypeSize>
+<ownDataTypeParameters>30 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="N_CODE" id="E96CFC89-3D49-7045-E5E8-286124553714">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:01:21 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<importedID>80AEC277-2E72-9C28-F77B-91DB10E19ED4</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,3,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="93587A8C-B12A-3474-5E2F-12056992DD74" referredColumn="E8AD0671-7FF3-AAC4-5705-32F1E5A510CE"/>
+</associations>
+</Column>
+<Column name="E_CODE" id="A3A8EA95-A561-596F-1477-34E7F3CB00DA">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:01:21 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<importedID>B75E21C5-D96D-CA18-FA62-D365C26A838D</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="28F841C2-0580-D7B5-BD2B-2898257B1DB0" referredColumn="9E07015A-A396-C82B-E95A-99D16E0C7816"/>
+</associations>
+</Column>
+<Column name="P_RARK" id="D0790CC5-BA2C-837C-5E12-717F64EE13A0">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:01:21 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<importedID>40B53EB0-77E7-F161-6896-5F493F48B344</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="P_AGE" id="13AF66F4-06BF-890A-393D-CC3162A99FA1">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:01:21 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<importedID>61D3A2FC-A9C2-29F9-919A-606217729C37</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,3,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FD2562DD-DFE7-3DDD-2EEC-4B1B281E6354" name="PK_PLATER">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:01:21 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<importedID>AD4CD762-5BB4-9678-DEB1-0070C8326C09</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="941FC675-1355-33F7-4D3C-0B4898FE27B2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0A3D6384-1DBD-C411-1890-65542F39A32E" schemaObject="246005AB-7BE5-F3A0-6155-0E036591B832" name="PK_PLATER">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:01:21 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<importedID>82CB9005-1C4B-3E9F-9DFA-894198267191</importedID>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="941FC675-1355-33F7-4D3C-0B4898FE27B2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D7074F22-77E3-5C69-4D67-42F909DEA14A" name="FK_PLAYER_EVENT">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:01:21 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A3A8EA95-A561-596F-1477-34E7F3CB00DA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="59823414-CDA6-A1A2-BBC6-C5B6740B5A3B" name="FK_PLAYER_NATION">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:01:21 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E96CFC89-3D49-7045-E5E8-286124553714"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

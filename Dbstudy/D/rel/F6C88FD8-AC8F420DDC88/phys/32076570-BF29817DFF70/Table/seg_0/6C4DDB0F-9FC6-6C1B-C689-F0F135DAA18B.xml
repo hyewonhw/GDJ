@@ -1,0 +1,81 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="EMPLOYEE" directorySegmentName="seg_0" id="6C4DDB0F-9FC6-6C1B-C689-F0F135DAA18B">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:56:06 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<schemaObject>AA08A9EE-07A6-EEF1-03B1-CF10EEE60531</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>11930388-1051-A891-F5DA-90886247BD89</segment>
+<tableSpace>73E862C4-3397-E66E-B3C3-84020AD54FC0</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="NAME" id="0BAFA0CB-D9A7-8C06-3969-077E68C3A5F9">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:56:06 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="SALARY" id="27DDCE00-FDB1-13B9-58DA-E71E28D1A17C">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:56:06 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="GENDER" id="94134B3A-8FFA-7A50-1567-CF17845D7549">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:56:06 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="EMP_NO" id="9AA596E9-2C35-18CD-E9BA-6A9F1E2F66EF">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:56:06 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DEPART" id="9B70562D-DF9E-09CB-2EDD-2E30F59C4DD4">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:56:06 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="POSITION" id="9F17D5D1-F4A0-1A0C-DC44-A8830CB8A988">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:56:06 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="HIRE_DATE" id="CE23FE24-8C73-762D-935E-8BD0BC02D479">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:56:06 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="PK_EMPLOYEE" id="47345D60-CE84-6781-8627-4D499E977165">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:56:06 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<schemaObject>AA08A9EE-07A6-EEF1-03B1-CF10EEE60531</schemaObject>
+<segment>4390C0E6-5B64-A445-C7F1-C7589DF0C774</segment>
+<tableSpace>73E862C4-3397-E66E-B3C3-84020AD54FC0</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_EMPLOYEE_DEPARTMENT" id="CBB49774-CBA8-769C-7007-EF450A9DFE8F">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:56:06 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PK_EMPLOYEE" id="673D3A91-631B-B678-840B-0FF3B246D689">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:56:06 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<segment>4390C0E6-5B64-A445-C7F1-C7589DF0C774</segment>
+<tableSpace>73E862C4-3397-E66E-B3C3-84020AD54FC0</tableSpace>
+<existingIndex>47345D60-CE84-6781-8627-4D499E977165</existingIndex>
+<indexSegment>4390C0E6-5B64-A445-C7F1-C7589DF0C774</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

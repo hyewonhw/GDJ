@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3EE14F89-150B-BFEC-44DE-82ECEB35D0BD" schemaObject="246005AB-7BE5-F3A0-6155-0E036591B832" name="EVENT">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:01:21 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<importedID>A86C8230-566A-7854-0CF4-62265EF18654</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="E_CODE" id="9E07015A-A396-C82B-E95A-99D16E0C7816">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:01:21 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<importedID>BBF4725B-5712-5377-FEE1-B3EF1FC3BC05</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="E_NAME" id="865A6DA3-FB15-857E-05C3-CA254DFB8B30">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:01:21 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<importedID>417246DC-875F-7764-860B-5FE484AD89AA</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 BYTE</dataTypeSize>
+<ownDataTypeParameters>30 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="E_FIRST_YEAR" id="AE213450-3093-1204-B87B-304F297A2F53">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:01:21 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<importedID>F78524F7-0CEE-CDE8-55D6-AD70A58B8A1C</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,4,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="E_INFO" id="D6D364C7-9106-8C13-32D1-32E5ACEC319D">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:01:21 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<importedID>B6B68FCE-656D-058C-48A4-7BA71309D4D4</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1E2E2C80-2613-323E-6668-941B45B981AB" name="PK_EVENT">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:01:21 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<importedID>AAEB44AC-B42A-0686-3EB4-8A52540E10A9</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9E07015A-A396-C82B-E95A-99D16E0C7816"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="36977D5D-B568-3368-FE22-50233B7819B4" schemaObject="246005AB-7BE5-F3A0-6155-0E036591B832" name="PK_EVENT">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-25 02:01:21 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<importedID>9419FB1E-88DD-C4B5-2719-4CB0600A1D79</importedID>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9E07015A-A396-C82B-E95A-99D16E0C7816"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

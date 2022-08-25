@@ -44,7 +44,7 @@ public class Main {
 			}// 지금 이 sb에 기상청 그 기상청 rss홈페이지에서 본 xml 전체내용이 들어가있음
 			
 			// 파싱 결과를 저장할 파일
-			File file = new File("test.txt");
+			File file = new File("weather.txt");
 			BufferedWriter bw = new BufferedWriter(new FileWriter(file));
 			
 			// StringBuilder에 저장된 응답(XML) 데이터를 JSON으로 변경하기
