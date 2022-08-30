@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D9BEC780-509D-8F4A-9364-5AA0E0E932C8" schemaObject="BD07CCD5-05BF-7B1F-C605-4E4C73A2F33C" name="DEPARTMENT">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-30 06:37:31 UTC</createdTime>
+<ownerDesignName>DSAAFSFS</ownerDesignName>
+<importedID>C579AA5D-4E46-661B-2557-248515E56202</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="DEPT_NO" id="0845CB22-47F3-CAC1-A2CE-D482E4F7746C">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-30 06:37:31 UTC</createdTime>
+<ownerDesignName>DSAAFSFS</ownerDesignName>
+<importedID>28536861-C354-9B7D-6012-637B8CD8038F</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DEPT_NAME" id="8D07950C-5032-9402-AE22-355CA904C879">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-30 06:37:31 UTC</createdTime>
+<ownerDesignName>DSAAFSFS</ownerDesignName>
+<importedID>D590B143-68DD-0707-5BDD-B176796C555B</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15 BYTE</dataTypeSize>
+<ownDataTypeParameters>15 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LOCATION" id="383C22B7-26DB-C7B6-C3D4-35A537EB6AE4">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-30 06:37:31 UTC</createdTime>
+<ownerDesignName>DSAAFSFS</ownerDesignName>
+<importedID>64F07A21-7787-8F90-7C4F-13BC7C0CC6C9</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15 BYTE</dataTypeSize>
+<ownDataTypeParameters>15 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D2F75068-F2F8-F863-40FB-D83431C780FD" name="PK_DEPARTMENT">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-30 06:37:31 UTC</createdTime>
+<ownerDesignName>DSAAFSFS</ownerDesignName>
+<importedID>F9E862FE-9726-3F35-AEDF-D23C9EDD86A4</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0845CB22-47F3-CAC1-A2CE-D482E4F7746C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="71258B3C-93C3-46C4-0D6D-975C57004A8C" schemaObject="BD07CCD5-05BF-7B1F-C605-4E4C73A2F33C" name="PK_DEPARTMENT">
+<createdBy>GDJ54</createdBy>
+<createdTime>2022-08-30 06:37:31 UTC</createdTime>
+<ownerDesignName>DSAAFSFS</ownerDesignName>
+<importedID>46E09F2C-EDEA-C7B7-0BC1-580B17686758</importedID>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0845CB22-47F3-CAC1-A2CE-D482E4F7746C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
