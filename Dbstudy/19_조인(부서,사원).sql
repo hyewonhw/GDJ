@@ -145,24 +145,3 @@ SELECT E.EMP_NO, E.NAME, D.DEPT_NAME
 SELECT E.EMP_NO, E.NAME, D.DEPT_NAME
   FROM DEPARTMENT D RIGHT OUTER JOIN EMPLOYEE E   -- 오른쪽의 EMPLOYEE 테이블은 모두 조회
     ON D.DEPT_NO = E.DEPART;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

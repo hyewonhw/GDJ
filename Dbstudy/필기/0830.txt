@@ -1,0 +1,6 @@
+SELECT
+FROM
+WHERE 조건 -> 그룹 이전에 하는 조건
+GROUP BY
+HAVING 조건 -> 그룹 이후 하는 조건
+ORDER BY
