@@ -39,9 +39,11 @@ public class InsertMain {
 			String user = "SCOTT";          					 
 			String password = "TIGER";
 			con = DriverManager.getConnection(url, user, password);
+			
 			// ? : 변수/ + board.getTitle()을 사용하면 보안에 취약/ 조회수는 처음에 0
 			String sql = "INSERT INTO BOARD(BOARD_NO, TITLE, CONTENT, HIT, CREATE_DATE) VALUES(BOARD_SEQ.NEXTVAL, ?, ?, 0, SYSDATE)";
 			
+			// PreparedStatement 객체 생성
 			ps = con.prepareStatement(sql);
 			
 			// 쿼리문에 포함된 ?에 변수 전달하기
@@ -55,7 +57,7 @@ public class InsertMain {
 			// 3. 반환값
 			// 	  1) 1이 반환되는 경우 : 1개의 행이 INSERT되었다는 의미. 성공을 의미함
 			//    2) 0이 반환되는 경우 : 0개의 행이 INSERT되었다는 의미. 실패를 의미함
-			int result = ps.executeUpdate();
+			int result = ps.executeUpdate();  // 실행이 executeUpdate
 			if(result > 0) { 
 				System.out.println("성공");
 			} else {

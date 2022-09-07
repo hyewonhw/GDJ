@@ -81,3 +81,14 @@ git add.(.=모든걸 올리겠다.)->staging(무대로올려서)->commit(커밋�
 1. git commit -am 
   (add와 commit을 한번에 하겠다 / 한번 add따로 commit따로 실행했었기 때문에 가능)
 2. git push origin main
+
+============================================
+
+git config user.name 'hw'
+git config user.email 'hwcho1205@naver.com'
+git add .
+git commit -m
+git remote add oringin 'https://github.com/hyewonhw/GDJ.git'
+git push origin main
+
+
