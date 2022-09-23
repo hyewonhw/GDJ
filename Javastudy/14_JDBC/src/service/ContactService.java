@@ -11,5 +11,4 @@ public interface ContactService {
 	public void deleteContact(int contact_no);     // 연락처 삭제 (번호만 있으면되니까 int로)
 	public void findContactByNo(int contact_no);   // 연락처 조회 (번호로 조회)
 	public void findAllContacts();
-	
 }

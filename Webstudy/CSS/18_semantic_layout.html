@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* CSS 초기화 작업/수기x 구글링해서 초기화가져다쓰는거추천 */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+       
+        * {
+            box-sizing: border-box;  /* width/height가 실제 크기가 됨 */
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        body, header, section, article, footer, 
+        aside, nav, h1, h2, h3, h4, h5, h6,
+        div, p, pre, ul, ol, li, dl, dt, dd {
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+        /* ------------ */
+
+        /* body */
+        body {
+            padding: 10px;
+            background-color: silver;
+        }
+
+        /* header */
+        header {
+            padding: 30px;
+            background-color: #FFF;
+        }
+        header > h1 {
+            text-align: center;
+        }
+
+        /* 네비게이션바 */
+        .gnb { 
+            height: 40px;
+            list-style-type: none;      /* 글머리 기호 없애기 */
+            background-color: #000;   /* 배경 검정 */
+            display: flex;              /* 자식 요소 li의 수평 레이아웃 */
+        }
+        .gnb > li {
+            width: 100px;               /* 각 메뉴의 너비 */
+        }
+        .gnb > li > a {
+            display: block;             /* a는 inline */ 
+            width: 100%; 
+            height: 100%;
+            text-align: center;
+            line-height: 40px;
+            color: white;
+        }
+        .gnb > li > a:hover {
+            background-color: green;
+        }
+
+        /* section */
+        .main_section {
+            display: flex;
+        }
+        .left_section {
+            border: 1px solid gray;
+            margin-right: 20px;
+            flex: 3;            /* width: 75%; */
+        }
+        .right_section {
+            border: 1px solid gray;
+            flex: 1;            /* width: 25%; */
+        }
+
+        /* section > article */
+        article {
+            margin: 10px 5px 0;    /* 위 10, 좌우 5, 아래 0 */
+            padding: 10px;
+            background-color: white;
+        }
+        .img {
+            padding: 20px;         /* padding으로 크기 키워줌 */
+            background-color: gray;
+        }
+
+        /* footer */
+        footer {
+            height: 150px;
+            margin-top: 10px;        /* section과 여백 띄우기 */
+            padding-top: 50px;       /* 텍스트 가운데언저리로 이동 */
+            border-top: 1px solid black;
+            background-color:  white;
+        }
+        footer > p {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- 화면의 상단영역 -->
+    <header>
+        <h1>Website</h1>
+    </header>
+
+    <!-- 네비게이션바 -->
+    <nav>
+        <ul class="gnb">
+            <li><a href="javascript:void(0)">Menu1</a></li>
+            <li><a href="javascript:void(0)">Menu2</a></li>
+            <li><a href="javascript:void(0)">Menu3</a></li>
+            <li><a href="javascript:void(0)">Menu4</a></li>
+            <li><a href="javascript:void(0)">Menu5</a></li>
+        </ul>
+    </nav>
+
+    <!-- 본문 > main안에 두개 수평배치 > article로 구역 -->
+    <section class="main_section">
+        <section class="left_section">
+            <article>
+                <h2>Title1</h2>
+                <p>Description1</p>
+                <div class="img"></div>
+                <p>Content1</p>
+            </article>
+            <article>
+                <h2>Title2</h2>
+                <p>Description2</p>
+                <div class="img"></div>
+                <p>Content2</p>
+            </article>
+        </section>
+        <section class="right_section">
+            <article>
+                <h2>Title3</h2>
+                <div class="img"></div>
+                <p>Content3</p>
+            </article>
+            <article>
+                <h2>Title3</h2>
+                <div class="img"></div>
+                <div class="img"></div>
+                <div class="img"></div>
+            </article>
+            <article>
+                <h2>Title3</h2>
+                <p>Description</p>
+                <p>Content3</p>
+            </article>
+        </section>
+    </section>
+
+    <!-- 화면의 하단영역 -->
+    <footer>
+        <p>footer area</p>
+    </footer>
+
+</body>
+</html>
