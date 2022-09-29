@@ -131,23 +131,21 @@
         func5('민경태', 45); 
 
 
-        // ======= 3) 함수 정의(디폴트)=======
+        // ======= 3) 함수 정의(디폴트)======= //
         function func6(name, greet) {
             
-            // 1. undefined 활용한 디폴트
+            // 3-1. undefined 활용한 디폴트
             if(greet == undefined) {
                 greet = '안녕';
             }
-
             /* 
                 undefined는 boolean 관점에서 false로 처리되는 특징을 가짐
                 if(!greet) {
                     greet = '안녕';
                 }
             */
-
             /*
-                2. 논리 OR 연산의 Short Circuit Evaluation 활용
+                3-2. 논리 OR 연산의 Short Circuit Evaluation 활용
                     greet에 값이 전달되었다면 greet은 undefined가 아니므로 true로 처리됨(값이 전달되면 true처리) 
                     -> (ex) greet에 hello가 전달되면 true이므로 || 뒤는 수행하지 않음
                     greet에 값이 전달되지 않는다면 greet은 undefined이므로 false로 처리됨(값이 전달되지않으면 false처리)
@@ -161,7 +159,7 @@
         func6('민경태', 'hello');  // hello 민경태 (전달된 인사 hello가 사용됨)
 
 
-        // ======= 4) 함수 정의(arguments 객체=======
+        // ======= 4) 함수 정의(arguments) 객체 =======//
         function func7() {
             console.log(arguments[0]);
         }
