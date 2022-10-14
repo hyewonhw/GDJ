@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/my") // @WebServlet({"/my", "/me"}) 이런식으로 두개 지정 가능
+@WebServlet("/my") // @WebServlet({"/my", "/me"}) 이런식으로 2개 이상의 URL Mapping 지정 가능
 
 public class MyServlet extends HttpServlet {
 	

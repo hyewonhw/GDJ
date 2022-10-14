@@ -76,7 +76,8 @@ public class FormServlet extends HttpServlet {
 		String[] agree = request.getParameterValues("agree");
 		if(agree == null) {
 			// 아무것도 선택안하고 보내면 null값(전송안함)/택배아예안감
-			
+			agree = new String[1];
+			agree[0] = "빈 동의";
 		}
 		
 		// -> 전송문제는 프론트/서버측 둘다 해주기
