@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 import common.ActionForward;
 import service.BoardAddService;
 import service.BoardDetailService;
+import service.BoardEditService;
 import service.BoardListService;
+import service.BoardModifyService;
 import service.BoardRemoveService;
 import service.BoardService;
 
@@ -40,17 +42,23 @@ public class BoardController extends HttpServlet {
 		// 요청에 따른 Service 선택
 		switch(urlMapping) {
 		// 비즈니스 로직
-		case"/board/list.do":
+		case "/board/list.do":
 			service = new BoardListService();
 			break;
-		case"/board/detail.do":
+		case "/board/detail.do":
 			service = new BoardDetailService();
 			break;
-		case"/board/add.do":
+		case "/board/add.do":
 			service = new BoardAddService();
 			break;
 		case "/board/remove.do":
 			service = new BoardRemoveService();
+			break;
+		case "/board/edit.do":
+			service = new BoardEditService();
+			break;
+		case "/board/modify.do":
+			service = new BoardModifyService();
 			break;
 		// 단순이동(포워딩)
 		case"/board/write.do":
