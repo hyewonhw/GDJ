@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!--
+		Spring Bean Configuration File
+		-> Bean 만드는 xml
+		-> 만든 Bean은 컨테이너(Container)에 보관됨
+	-->
+	
+	<!--
+		1. 디폴트 생성자 + setter(property 태그로 setter와 연결)
+	-->
+	<bean id="calc" class="com.gdu.app01.xml01.Calculator" ></bean>
+	<bean id="haksang" class="com.gdu.app01.xml01.Student">
+		<property name="name">
+			<value>홍길동</value>
+		</property>
+		<property name="school">
+			<value>가산대학교</value>
+		</property>
+		<property name="calculator">
+			<ref bean="calc"/>
+		</property>
+	</bean>
+	
+	<!--
+		2. 생성자(Generate Constructor using Fileds)
+	-->
+	
+
+
+
+
+</beans>
