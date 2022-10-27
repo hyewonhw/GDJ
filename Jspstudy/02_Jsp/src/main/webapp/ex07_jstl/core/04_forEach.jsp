@@ -46,8 +46,8 @@
 	
 	<%-- 4. 배열 --%>
 	<%
-		String[] menus = {"김밥", "떡볶이", "순대"};
-		pageContext.setAttribute("menus", menus);
+	String[] menus = {"김밥", "떡볶이", "순대"};
+			pageContext.setAttribute("menus", menus);
 	%>
 	<c:forEach var="menu" items="${menus}" varStatus="vs"> <!-- vs : 인덱스 꺼내서 쓸 때 필요 -->
 		인덱스 : ${vs.index}, 순번 : ${vs.count}, 배열요소 : ${menu}<br>
@@ -57,8 +57,8 @@
 	
 	<%-- 5. 리스트 --%>
 	<%
-		List<String> seasons = Arrays.asList("봄", "여름", "가을", "겨울");
-		pageContext.setAttribute("seasons", seasons);
+	List<String> seasons = Arrays.asList("봄", "여름", "가을", "겨울");
+			pageContext.setAttribute("seasons", seasons);
 	%>
 	<c:forEach var="season" items="${seasons}" varStatus="k">
 		인덱스 : ${k.index}, 순번 : ${k.count}, 리스트요소 : ${season} <br>
@@ -68,10 +68,10 @@
 	
 	<%-- 6. Map (반복이 필요한 건 아님/Map이 EL에서 사용되는 방식) --%>
 	<%
-		Map<String, Integer> map = new HashMap<>();
-		map.put("begin", 1);
-		map.put("end", 10);
-		pageContext.setAttribute("map", map);
+	Map<String, Integer> map = new HashMap<>();
+			map.put("begin", 1);
+			map.put("end", 10);
+			pageContext.setAttribute("map", map);
 	%>
 	${map.begin} ~ ${map.end}<br>
 
@@ -80,11 +80,11 @@
 	<%-- 7. 객체 (반복이 필요한 건 아님) --%>
 
 	<%
-		Board board = new Board();
-		board.setBoardNO(1);
-		board.setTitle("도대체 언제까지...");
-		board.setHit(100);
-		pageContext.setAttribute("board", board);
+	Board board = new Board();
+			board.setBoardNO(1);
+			board.setTitle("도대체 언제까지...");
+			board.setHit(100);
+			pageContext.setAttribute("board", board);
 	%>
 	${board.boardNo}, ${board.title}, ${board.hit}<br>
 	${board.getBoardNo()}, ${board.getTitle()}, ${board.getHit()}<br>  <!-- 비추 -->
@@ -99,11 +99,11 @@
 		문제. 임의의 Board 객체를 3개 저장한 리스트
 	--%>
 	<%
-		List<Board> boards = new ArrayList<>();
-		boards.add(new Board(100, "질문입니다", 2));
-		boards.add(new Board(200, "  [Re] 저도 궁금해요", 1));
-		boards.add(new Board(300, "답변입니다", 5));
-		pageContext.setAttribute("boards", boards);
+	List<Board> boards = new ArrayList<>();
+			boards.add(new Board(100, "질문입니다", 2));
+			boards.add(new Board(200, "  [Re] 저도 궁금해요", 1));
+			boards.add(new Board(300, "답변입니다", 5));
+			pageContext.setAttribute("boards", boards);
 	%>
 	<table border="1">
 		<thead>

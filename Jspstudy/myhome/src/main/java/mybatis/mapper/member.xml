@@ -14,5 +14,26 @@
 		 WHERE ID = #{id} AND PW = #{pw}
 	</select>
 
+	<insert id="insertMember" parameterType="Member">
+		INSERT INTO MEMBER
+			(MEMBER_NO, ID, PW, NAME, EMAIL, REGISTED_DATE)
+		VALUES
+			(MEMBER_SEQ.NEXTVAL, #{id}, #{pw}, #{name}, #{email}, TO_CHAR(SYSDATE, 'yyyy-mm-dd'))
+	</insert>
+	
+	<delete id="deleteMember" parameterType="int">
+		DELETE
+		  FROM MEMBER
+		 WHERE MEMBER_NO = ${memberNo}
+		 <!-- 
+		 	여기서만 #도 $도 가능함
+		 	#은 마이바티스 내부에서 '를 붙임 $는 '가 안붙고 변수값만 그대로들어감
+		 	$는 수치데이터
+		 -->
+	</delete>
+	
+	
+	
+
 </mapper>
 
