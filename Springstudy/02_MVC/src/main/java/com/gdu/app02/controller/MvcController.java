@@ -38,7 +38,7 @@ public class MvcController {
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	
 	
-	// 메소드 작성 방법 (접근권한 걍 public)
+	// 메소드 작성 방법 (접근권한 걍 public으로하기)
 	// 1. 반환타입 : String (응답할 뷰(jsp)의 이름을 반환)
 	// 2. 메소드명 : 아무 일도 안함. 맘대로 작성
 	// 3. 매개변수 : 선택 (요청이 있으면 request, 응답을 만들면 response 등)
@@ -124,11 +124,5 @@ public class MvcController {
 		}
 		
 	}
-	
-	
-	
-	
-	
-	
 	
 }
