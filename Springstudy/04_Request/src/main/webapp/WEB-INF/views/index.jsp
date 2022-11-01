@@ -18,9 +18,9 @@
 	
 	<hr>
 	
+	
+	
 	<h3>Member 관련 요청</h3>
-	
-	
 	
 	<div>
 		<a href="${contextPath}/member/detail1?id=adimin&pw=1234">전송</a>
@@ -55,6 +55,10 @@
 	
 	<div>
 		<a href="${contextPath}/board/detail1?title=공지사항&hit=10">전송</a>
+	</div>
+
+	<div>
+		<a href="${contextPath}/board/detail3?title=공지사항&hit=10">전송</a>
 	</div>
 	
 </body>
