@@ -77,28 +77,6 @@ public class MyController1 {
 	public Map<String, Object> detail3(Member member) {
 		Map<String, Object> map = memberService.execute3(member);
 		return map;
-	} // return memberService.excute3
-	
-	
-	
-	/*
-		@RequestBody
-		요청 데이터가 body에 포함되어있다고 알려줌
-		요청 파라미터에서는 사용 할 수 없음
-		post방식으로 파라미터 없이 데이터 전달될 때 사용
-	*/
-	@ResponseBody
-	@PostMapping(value="member/detail4"
-			   , produces=MediaType.APPLICATION_JSON_VALUE)
-	public Member detail4(@RequestBody Member member) {
-		return memberService.execute4(member);
-	}
-	
-	
-	
-	
-	
-	
-	
+	} // return memberService.excute3	
 	
 }

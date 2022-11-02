@@ -24,7 +24,6 @@
 		$('#btn1').click(function(){fn_ajax1();});
 		$('#btn2').click(function(){fn_ajax2();});
 		$('#btn3').click(function(){fn_ajax3();});
-		$('#btn4').click(function(){fn_ajax4();});
 	});
 	
 	function fn_ajax1(){
@@ -94,41 +93,7 @@
 		}) // ajax
 		
 	} // function
-	
-	function fn_ajax4(){
-		
-		$('#result').empty();  // 데이터 지우는 초기화 작업
-		
-		$.ajax({
-			/* 요청 */
 
-			url: '${contextPath}/member/detail4'
-			
-			// JSON 데이터를 서버로 보낼 때는 반드시 post방식을 사용해야 함
-			type: 'post',
-			
-			// data에 파라미터가 없음을 주의
-			// 파라미터로 전달되지 않기 때문에 주소창을 이용한 get방식이 불가능함
-			data: JSON.stringify({
-				'id': $('#id').val(),
-				'pw': $('#pw').val()
-			}),
-			
-			// 서버로 보내는 JSON 데이터의 MIME-TYPE을 작성해 줌
-			contentType: 'application/json',
-			
-			/* 응답 */
-			dataType: 'json',
-			success: function(resData){
-				var ul = '<ul>';
-				ul += '<li>' + resData.id + '</li>';
-				ul += '<li>' + resData.pw + '</li>';
-				ul += '</ul>';
-				$('#result').html(ul);
-			}
-		}) // ajax
-		
-	} // function
 	
 </script>
 </head>
