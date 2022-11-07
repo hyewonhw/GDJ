@@ -109,38 +109,13 @@ public class DBConfig {
 	
 		return new DefaultPointcutAdvisor(pointCut, transactionInterceptor());
 		
-		
+	    /*
+        AOP 기본 용어
+        1. 조인포인트 : AOP를 동작시킬 수 있는 메소드 전체       (목록, 상세, 삽입, 수정, 삭제 메소드)
+        2. 포인트컷   : 조인포인트 중에서 AOP를 동작시킬 메소드 (삽입, 수정, 삭제 메소드)
+        3. 어드바이스 : 포인트컷에 동작시킬 AOP 동작 자체       (로그, 트랜잭션 등)
+	    */
+   
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 }

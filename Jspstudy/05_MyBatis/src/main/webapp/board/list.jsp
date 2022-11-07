@@ -90,6 +90,7 @@
 			</li>
 		</c:forEach>
 	</ul>
-
-</body>
+	
+	
+</head>
 </html>
