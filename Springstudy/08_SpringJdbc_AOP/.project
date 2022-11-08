@@ -3,6 +3,7 @@
 	<name>08_SpringJdbc_AOP</name>
 	<comment></comment>
 	<projects>
+		<project>spring-web-5.3.3</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

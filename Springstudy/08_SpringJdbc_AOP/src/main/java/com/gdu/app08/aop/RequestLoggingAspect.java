@@ -23,7 +23,7 @@ public class RequestLoggingAspect {
 	private static final Logger LOG = LoggerFactory.getLogger(RequestLoggingAspect.class); 
 	
 	
-	@Pointcut("whithin(com.gdu.app08.controller..*)")  // controller 패키지 아래 모든 패키지(..)의 모든 클래스(*)
+	@Pointcut("within(com.gdu.app08.controller..*)")  // controller 패키지 아래 모든 패키지(..)의 모든 클래스(*)
 	// pointcut은 joinpoint안에 속함
 	// -> 컨트롤러의 모든 메소드를 포인트컷으로 지정하겠다.
 	// 컨트롤러의 모든 메소드에서 어드바이스
@@ -36,7 +36,7 @@ public class RequestLoggingAspect {
 	// 어드바이스 설정
 	// 어드바이스 실행 시점
 	// @Before, @After, @AfterReturning, @AfterThrowing, @Around
-	@Around("com.gdu.app08.RequestLoggingAspect.setPointCut()")  // setPointCut() 메소드에 설정된 포인트컷에서 동작하는 어드바이스
+	@Around("com.gdu.app08.aop.RequestLoggingAspect.setPointCut()")  // setPointCut() 메소드에 설정된 포인트컷에서 동작하는 어드바이스
 	public Object executeLogging(ProceedingJoinPoint joinPoint) throws Throwable {  // @Around는 반드시 ProceedingJoinPoint joinPoint 선언해야함
 		
 		// HttpServletRequest 사용하는 방법
@@ -48,10 +48,10 @@ public class RequestLoggingAspect {
 		Map<String, String[]> map = request.getParameterMap();
 		String params = "";
 		if(map.isEmpty()) {
-			params += "[No Params]";
+			params += "[No Parameter]";
 		} else {
 			for(Map.Entry<String, String[]> entry : map.entrySet()) {
-				params += "[" + entry.getKey() + "=" + String.format("%s", (Object[])entry.getValue());
+				params += "[" + entry.getKey() + "=" + String.format("%s", (Object[])entry.getValue()) + "]";
 			}
 		}
 		
