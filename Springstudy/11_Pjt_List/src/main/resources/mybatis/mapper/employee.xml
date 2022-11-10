@@ -34,15 +34,69 @@
 		  FROM EMPLOYEES
 	</select>
 	
-	<select id="selectEmployeesByPage" resultMap="EmpMap">
+	<!-- map에 저장한 키값 그대로 사용 가능하기 때문에 begin end 사용가능 
+		INNER JOIN으로 하면 부서가 없는 한명 누락 되므로 EMPLOYEES에 JOIN하기위해 RIGTH JOIN해줌
+	-->
+	<select id="selectEmployeesByPage" parameterType="Map" resultMap="EmpMap">
 		SELECT B.*
 		  FROM (SELECT ROWNUM AS RN, A.*
 		          FROM (SELECT E.*, D.DEPARTMENT_NAME, D.LOCATION_ID
-		                  FROM DEPARTMENTS D INNER JOIN EMPLOYEES E
+		                  FROM DEPARTMENTS D RIGHT OUTER JOIN EMPLOYEES E
 		                    ON D.DEPARTMENT_ID = E.DEPARTMENT_ID
 		                  ORDER BY HIRE_DATE DESC) A) B
-		 WHERE B.RN BETWEEN #{param1} AND #{param2}
+		 WHERE B.RN BETWEEN #{begin} AND #{end}		 
 	</select>
+	
+	<!-- Map에 column, query 들어있음
+		
+		#{column}이면 WHERE 'EMPLOYEE_ID' = '150'이 되기때문에 문법상 맞지않음
+		WHERE #{column} = #{column}
+		WHERE 'EMPLOYEE_ID' = '150'
+
+		
+		${column}으로 바꿔줘야 WHERE EMPLOYEE_ID = '150'이 됨
+		WHERE ${column} = #{column}
+		WHERE EMPLOYEE_ID = '150	
+	-->
+	<select id="selectFindEmployeesCount" parameterType="Map" resultType="int">
+		SELECT COUNT(*)
+		  FROM EMPLOYEES E
+		<where>
+		  <if test="column=='EMPLOYEE_ID' or column=='E.DEPARTMENT_ID'">${column} = #{query}</if>
+		  <if test="column=='LAST_NAME' or column=='FIRST_NAME' or column=='PHONE_NUMBER'">${column} LIKE '%' || #{query} || '%'</if>
+		  <if test="column=='HIRE_DATE'">${column} BETWEEN TO_DATE(#{start}, 'yyyy-mm-dd') AND TO_DATE(#{stop}, 'yyyy-mm-dd')</if>
+		  <if test="column=='SALARY'">${column} BETWEEN #{start} AND #{stop}</if>
+		</where>
+	</select>
+
+	<!-- JOIN하기 전에 부서번호 80으로 범위 줄이기
+		FROM DEPARTMENT D RIGHT OUTER JOIN (SELECT * FROM EMPLOYEES WHERE DEPARTMENT_ID = 80) E
+		또는
+		ON절 아래 WHERE절 추가해주기 WHERE D.DEPARTMENT_ID = 80
+	 -->
+	<select id="selectFindEmployees" parameterType="Map" resultMap="EmpMap">
+		SELECT B.*
+		  FROM (SELECT ROWNUM AS RN, A.*
+		          FROM (SELECT E.*, D.DEPARTMENT_NAME, D.LOCATION_ID
+		                  FROM DEPARTMENTS D RIGHT OUTER JOIN EMPLOYEES E
+		                    ON D.DEPARTMENT_ID = E.DEPARTMENT_ID
+		               <where>
+		                   <if test="column=='EMPLOYEE_ID' or column=='E.DEPARTMENT_ID'">${column} = #{query}</if>
+		                   <if test="column=='LAST_NAME' or column=='FIRST_NAME' or column=='PHONE_NUMBER'">${column} LIKE '%' || #{query} || '%'</if>
+		                   <if test="column=='HIRE_DATE'">${column} BETWEEN TO_DATE(#{start}, 'yyyy-mm-dd') AND TO_DATE(#{stop}, 'yyyy-mm-dd')</if>
+		                   <if test="column=='SALARY'">${column} BETWEEN #{start} AND #{stop}</if>
+		               </where>
+		                 ORDER BY HIRE_DATE DESC) A) B
+		 WHERE B.RN BETWEEN #{begin} AND #{end}
+	</select>
+	
+	<!-- 문자열 연결 || 대신 CONCAT사용 3개이상 연결시 CONCAT 2개이상 사용 -->
+	<select id="selectAutoCompleteList" parameterType="String" resultType="EmpDTO">
+		SELECT DISTINCT EMAIL
+		  FROM EMPLOYEES
+		 WHERE EMAIL LIKE CONCAT(#{param}, '%')
+	</select>
+	
 	
 </mapper>
 

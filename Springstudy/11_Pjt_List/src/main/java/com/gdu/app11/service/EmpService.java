@@ -1,5 +1,7 @@
 package com.gdu.app11.service;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.ui.Model;
@@ -12,4 +14,7 @@ public interface EmpService {
 		아래 request도 controller로부터 받아온거임
 	*/
 	public void findAllEmployees(HttpServletRequest request, Model model); 
+	public void findEmployees(HttpServletRequest request, Model model); 
+	public Map<String, Object> findAutoCompleteList(HttpServletRequest request);
+	
 }
