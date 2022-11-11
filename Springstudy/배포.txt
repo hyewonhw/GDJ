@@ -1,0 +1,16 @@
+수동 배포
+1. CATALINA_HOME\conf\server.xml에서 Connector port=9090변경
+2. CATALINA_HOME\webapps에 galaxy.war 가져다두기
+3. CATALINA_HOME\bin에서 startup.bat(startup.sh) 실행하기
+4. 톰캣이 구동하면서 CATALINA_HOME\webapps\galaxy 디렉터리 생성
+5. 주소창에 http://localhost:9090/galaxy 입력
+--------------------------------------------------------------------------------
+실패 시 
+1. CATALINA_HOME\bin에서 shutdown.bat(shutdown.sh) 실행하기
+2. CATALINA_HOME\webapps에 있는 galaxy.war와 galaxy 디렉터리 삭제
+--------------------------------------------------------------------------------
+CATALINA_HOME\webapps\ROOT 디렉터리
+1. 주소창에 http://localhost:9090/입력하면 실행되는 디렉터리
+2. 연습
+    기존 ROOT 디렉터리 내부 파일을 모두 지우고, 
+    galaxy.war를 ROOT.war로 이름 변경한 뒤 수동 배포
