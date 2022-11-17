@@ -21,18 +21,17 @@
 	<!-- 로그인이 된 상태  -->
 	<c:if test="${loginUser != null}">
 		<div>
-			<a href="${contextPath}/user/mypage">${loginUser.name}</a> 님 반갑습니다.
+			<a href="${contextPath}/user/check/form">${loginUser.name}</a> 님 반갑습니다.
 		</div>
 		<a href="${contextPath}/user/logout">로그아웃</a>
-		
-		<a id="lnk_retire" href="${contextPath}/user/retire">회원탈퇴</a>
+		<a onclick="javascript:fn_abc()">회원탈퇴</a>
+		<form id="lnk_retire" action="${contextPath}/user/retire" method="post"></form>
 		<script>
-			$('#lnk_retire').click(function(){
+			function fn_abc(){
 				if(confirm('탈퇴하시겠습니까?') == false){
-					event.preventDefault();  // a 태그의 기본이벤트(href 속성) 실행을 막음
-					return;
+					$('#lnk_retire').submit();  // post method로 submit함
 				}
-			});
+			}
 		</script>
 	</c:if>
 

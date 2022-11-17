@@ -19,8 +19,13 @@ import com.gdu.app13.service.UserService;
 @Controller
 public class UserController {
 
+	// controller의 모든 요청 이전에 interceptor동작시켜야함
+	// 만들어만두면 알아서 개입함
+	// true반환 : 동작 함 / false반환 : 동작 안함 
+	
 	@Autowired
 	private UserService userService;
+	
 	
 	@GetMapping("/")
 	public String index() {
@@ -59,13 +64,15 @@ public class UserController {
 		return userService.sendAuthCode(email);
 	}
 	
+	// 회원가입
 	@PostMapping("/user/join")
 	// http request, http response는 컨트롤러가 선언하고 서비스로 넘겨준겅임
 	public void join(HttpServletRequest request, HttpServletResponse response) {
 		userService.join(request, response);
 	}
 	
-	@GetMapping("/user/retire")
+	// 탈퇴
+	@PostMapping("/user/retire")
 	public void retire(HttpServletRequest request, HttpServletResponse response) {
 		userService.retire(request, response);
 	}
@@ -87,22 +94,29 @@ public class UserController {
 
 	@GetMapping("/user/logout")
 	public String logout(HttpServletRequest request, HttpServletResponse response) {
-		request.getSession().invalidate();
+		userService.logout(request, response);
 		return "redirect:/";
 	}
 	
+	@GetMapping("/user/check/form")
+	public String requiredLogin_checkForm() {
+		return "user/check";
+	}
 	
+	@ResponseBody
+	@PostMapping(value="/user/check/pw", produces="application/json")
+	public Map<String, Object> requiredLogin_checkPw(HttpServletRequest request) {
+		return userService.confirmPassword(request);
+	}
 	
+	@GetMapping("/user/mypage")
+	public String requiredLogin_mypage() {
+		return "user/mypage";
+	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	@PostMapping("/user/modify/pw")
+	public void requiredLogin_modifyPw(HttpServletRequest request, HttpServletResponse response) {
+		userService.modifyPassword(request, response);
+	}
 	
 }
