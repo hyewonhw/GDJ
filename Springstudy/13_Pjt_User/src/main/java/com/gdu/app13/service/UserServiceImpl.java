@@ -1,7 +1,15 @@
 package com.gdu.app13.service;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.math.BigInteger;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.security.SecureRandom;
 import java.sql.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,6 +27,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
@@ -26,6 +35,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.gdu.app13.domain.RetireUserDTO;
+import com.gdu.app13.domain.SleepUserDTO;
 import com.gdu.app13.domain.UserDTO;
 import com.gdu.app13.mapper.UserMapper;
 import com.gdu.app13.util.SecurityUtil;
@@ -548,10 +558,184 @@ public class UserServiceImpl implements UserService {
 			e.printStackTrace();
 		}
 		
+	}
+	
+	
+	@Transactional  // insert와 delete가 동시에 진행되기때문에 필요
+	@Override
+	public void sleepUserHandle() {
+		int insertCount = userMapper.insertSleepUser();
+		if(insertCount > 0) {
+			userMapper.deleteUserForSleep();
+		}
 		
 	}
 	
 	
+	@Override
+	public SleepUserDTO getSleepUserById(String id) {
+		return userMapper.selectSleepUserById(id);
+	}
+	
+	
+	@Transactional
+	@Override
+	public void restoreUser(HttpServletRequest request, HttpServletResponse response) {
+		
+		// 계정 복원을 원하는 사용자의 아이디
+		HttpSession session = request.getSession();
+		SleepUserDTO sleepUser = (SleepUserDTO)session.getAttribute("sleepUser");
+		String id = sleepUser.getId();
+		
+		// pw가 일치하는지 확인
+		int insertCount = userMapper.insertRestoreUser(id);
+		int deleteCount = 0;
+		if(insertCount > 0) {
+			deleteCount = userMapper.deleteSleepUser(id);
+		}
+		
+		// 응답
+		try {
+
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			
+			if(insertCount > 0 && deleteCount > 0) {
+				out.println("<script>");
+				out.println("alert('휴면 계정이 복구되었습니다. 휴면 계정 활성화를 위해 곧바로 로그인을 해 주세요.');");
+				out.println("location.href='" + request.getContextPath() + "/user/login/form';");
+				out.println("</script>");
+			} else {
+				out.println("<script>");
+				out.println("alert('휴면 계정이 복구되지 않았습니다.');");
+				out.println("history.back();");
+				out.println("</script>");
+			}
+			out.close();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+		
+	
+	@Override
+	public String getNaverLoginApiURL(HttpServletRequest request) {
+		
+		String apiURL = null;
+		
+		try {
+			String clientId = "tq2feeDwAFErLbNnPmUu";
+		    String redirectURI = URLEncoder.encode("http://localhost:9090/" + request.getContextPath() + "/user/naver/login", "UTF-8");
+		    SecureRandom random = new SecureRandom();
+		    String state = new BigInteger(130, random).toString();
+		    apiURL = "https://nid.naver.com/oauth2.0/authorize?response_type=code";
+		    apiURL += "&client_id=" + clientId;
+		    apiURL += "&redirect_uri=" + redirectURI;
+		    apiURL += "&state=" + state;
+		    HttpSession session = request.getSession();
+		    session.setAttribute("state", state);	
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	    
+	    return apiURL;
+	}	
+	
+	
+	@Override
+	public UserDTO getNaverLoginTokenNProfile(HttpServletRequest request) {
+		
+		// access_token 받기
+		
+		String clientId = "tq2feeDwAFErLbNnPmUu";
+	    String clientSecret = "w1FLigKs5G";
+	    String code = request.getParameter("code");
+	    String state = request.getParameter("state");
+	    
+	    String redirectURI = null;
+	    try {
+	    	redirectURI = URLEncoder.encode("http://localhost:9090" + request.getContextPath() , "UTF-8");
+	    } catch (UnsupportedEncodingException e) {
+	    	e.printStackTrace();
+		}
+	    
+	    String access_token = "";
+	    
+	    StringBuffer res = new StringBuffer();  // StringBuffer는 StringBuilder과 동일한 역할 수행
+	   
+	    try {
+	    	
+	    	String apiURL;
+		    apiURL = "https://nid.naver.com/oauth2.0/token?grant_type=authorization_code&";
+		    apiURL += "client_id=" + clientId;
+		    apiURL += "&client_secret=" + clientSecret;
+		    apiURL += "&redirect_uri=" + redirectURI;
+		    apiURL += "&code=" + code;
+		    apiURL += "&state=" + state;
+		    
+	    	URL url = new URL(apiURL);
+	    	HttpURLConnection con = (HttpURLConnection)url.openConnection();
+	    	con.setRequestMethod("GET");
+	    	int responseCode = con.getResponseCode();
+	    	BufferedReader br;
+	    	if(responseCode==200) { // 정상 호출
+	    		br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+	    	} else {  // 에러 발생
+	    		br = new BufferedReader(new InputStreamReader(con.getErrorStream()));
+	    	}
+	    	String inputLine;
+	    	while ((inputLine = br.readLine()) != null) {
+	    		res.append(inputLine);
+	    	}
+	    	br.close();
+	    	con.disconnect();
+	    	/***********************************************************************여기까지 토큰받기****/
+    	} catch (Exception e) {
+	    	e.printStackTrace();
+	    }
+	    
+	    JSONObject obj = new JSONObject(res.toString());
+	    access_token = obj.getString("access_token");
+	    
+	    /************************************************************************토큰받아옴*********/
+	    
+	    // 프로필 받아오기
+	    String header = "Bearer " + access_token;
+	    	
+	    StringBuffer sb = new StringBuffer();
+	    	
+	    try {
+				
+			String apiURL = "https://openapi.naver.com/v1/nid/me";
+			URL url = new URL(apiURL);
+			HttpURLConnection con = (HttpURLConnection)url.openConnection();
+			con.setRequestMethod("GET");
+			con.setRequestProperty("Authorization", header);
+			int responseCode = con.getResponseCode();
+			BufferedReader br;
+			if(responseCode==200) { // 정상 호출
+				br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+			} else {  // 에러 발생
+				br = new BufferedReader(new InputStreamReader(con.getErrorStream()));
+			}
+			String inputLine;
+			while ((inputLine = br.readLine()) != null) {
+				sb.append(inputLine);
+			}
+			br.close();
+			con.disconnect();
+				
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+			
+		// 받아온 profile을 UserDTO로 만들어서 반환
+			
+		return null;
+	}
+		
 	
 	
 }

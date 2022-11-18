@@ -5,6 +5,7 @@ import java.util.Map;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.gdu.app13.domain.RetireUserDTO;
+import com.gdu.app13.domain.SleepUserDTO;
 import com.gdu.app13.domain.UserDTO;
 
 
@@ -19,4 +20,9 @@ public interface UserMapper {
 	public int insertRetireUser(RetireUserDTO retireUser);
 	public int updateSessionInfo(UserDTO user);
 	public int updateUserPassword(UserDTO user); // userNo, pw 들어있어야함
+	public int insertSleepUser();
+	public int deleteUserForSleep();
+	public SleepUserDTO selectSleepUserById(String id);
+	public int insertRestoreUser(String id);
+	public int deleteSleepUser(String id);
 }

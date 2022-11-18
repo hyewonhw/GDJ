@@ -1,0 +1,32 @@
+로그인 화면에서 네이버로그인 클릭
+(response_type, client_id, redirect_uri, satae 전송)
+->
+네이버로그인 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
