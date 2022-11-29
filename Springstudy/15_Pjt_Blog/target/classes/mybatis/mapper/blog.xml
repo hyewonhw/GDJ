@@ -62,6 +62,8 @@
 		 WHERE BLOG_NO = #{blogNo}
 	</delete>
 	
+	
+	
 	<select id="selectSummernoteImageListInBlog" parameterType="int" resultType="SummernoteImageDTO">
 		SELECT BLOG_NO, FILESYSTEM
 		  FROM SUMMERNOTE_IMAGE
