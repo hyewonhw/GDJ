@@ -44,7 +44,7 @@
 				$('#frm_btn').submit();
 			});
 			$('#btn_remove_gallbrd').click(function(){
-				if(confirm('블로그를 삭제하면 블로그에 달린 댓글을 더 이상 확인할 수 없습니다. 삭제하시겠습니까?')) {
+				if(confirm('게시글을 삭제하시겠습니까?')) {
 					// cascade가 아닌 set null이기 때문에 함께 삭제 되진 않음
 					$('#frm_btn').attr('action', '${contextPath}/gall/remove');
 					$('#frm_btn').submit();

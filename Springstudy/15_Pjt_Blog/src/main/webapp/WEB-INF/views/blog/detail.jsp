@@ -90,6 +90,8 @@
 	
 	<!-- 현재 페이지 번호를 저장하고 있는 hidden -->
 	<input type="hidden" id="page" value="1">
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 	
 	<script>
 		
@@ -99,7 +101,9 @@
 		fn_addComment();
 		fn_commentList();
 		fn_changePage();
-		
+		fn_removeComment();
+		fn_switchReplyArea();
+		fn_addReply();
 		
 		function fn_commentCount(){
 			$.ajax({
@@ -177,7 +181,15 @@
 						}
 						if(comment.state == 1) {
 							// 1 이면 정상
-							div += '<div>' + comment.content + '</div>';
+							div += '<div>';
+							div += comment.content;
+							//////////////// 작성자만 삭제할 수 있도록 if 처리 필요 ///////////////////
+							div += '<input type="button" value="삭제" class="btn_comment_remove" data-comment_no="' + comment.commentNo + '">';
+							if(comment.depth == 0) {
+								// 댓글에만 답글을 달 수 있도록 if 처리 필요 (depth가 0이면 댓글 1이면 답글)
+								div += '<input type="button" value="답글" class="btn_reply_area">'; // 클릭히면 reply_area에 blind 토글
+							}
+							div += '</div>';
 						} else {
 							if(comment.depth == 0) {
 								div += '<div>삭제된 댓글입니다.</div>';
@@ -188,6 +200,15 @@
 						div += '<div>';
 						moment.locale('ko-KR');
 						div += '<span style="font-size: 12px; color: silver;">' + moment(comment.createDate).format('YYYY. MM. DD hh:mm') + '</span>';
+						div += '</div>';
+						div += '<div style="margin-left:40px;" class="reply_area blind">';
+						div += '<form class="frm_reply">'; // 반복문 내부기때문에 class (id 안됨)
+						div += '<input type="hidden" name="blogNo" value="' + comment.blogNo + '">';
+						div += '<input type="hidden" name="groupNo" value="' + comment.commentNo + '">';   // comment.groupNo 사용가능
+						div += '<input typt="text" name="content" placeholder="답글을 작성하려면 로그인을 해주세요.">';
+						// 로그인한 사용자만 볼 수 있도록 if 처리
+						div += '<input type="button" value="답글작성완료" class="btn_reply_add">'; // 서브밋안하고 ajax해야함(input type="submit" 금지)
+						div += '</form>';
 						div += '</div>';
 						div += '</div>';
 						$('#comment_list').append(div);
@@ -221,23 +242,71 @@
 		// enable_link는 동적 요소라서 .click으로 못함
 		// 위에 스팬태그만들어서 맹근애라
 		function fn_changePage() {
-			$().on('click', '.enable_link', function() {
+			$(document).on('click', '.enable_link', function() {
 				$('#page').val( $(this).data('page') );
 				fn_commentList();
 			});
 		}
 		
+		function fn_removeComment(){
+			$(document).on('click', '.btn_comment_remove', function(){
+				if(confirm('삭제된 댓글은 복구할 수 없습니다. 댓글을 삭제할까요?'));
+				$.ajax({
+					type: 'post',
+					url: '${contextPath}/comment/remove',
+					data: 'commentNo=' + $(this).data('comment_no'),
+					dataType: 'json',
+					success: function(resData){ // resData = {"isRenove": true}
+						if(resData.isRemove){
+							alert('댓글이 삭제되었습니다.');
+							fn_commentList();
+							fn_commentCount();
+						}
+					}
+				});
+			});
+		}
+		
+		function fn_switchReplyArea() {
+			$(document).on('click', '.btn_reply_area', function() {
+				$(this).parent().next().next().toggleClass('blind');  //f12로 찾긔
+			});
+		}
+		
+		function fn_addReply() {
+			$(document).on('click', '.btn_reply_add', function (){
+				// 공백검사
+				if($(this).prev().val() == ''){
+					alert('답글 내용을 입력하세요.');
+					return;
+				}
+				$.ajax({
+					type: 'post',
+					url: '${contextPath}/comment/reply/add',
+					data: $(this).closest('.frm_reply').serialize(),  // 버튼 기준으로 잡아줘야함 / 바로 윗 부모이기땜시 parent() 또는 closest() / $('.frm_reply')
+					dataType: 'json',
+					success: function(resData) {  // resData = {"isAdd", true}
+						if(resData.isAdd) {
+							// 추가되었다면
+							alert('답글이 등록되었습니다.');
+							fn_commentList();
+							fn_commentCount();
+						}
+					}
+				});
+			});
+		}
+		
+		
+		
+		
+		
+		
+		
+		
 		
 	</script>
 	
-	
-	
-	
-	
-	
-	
-
-
 </div>
 
 </body>

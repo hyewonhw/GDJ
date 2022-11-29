@@ -38,33 +38,36 @@
 				// summernote 편집기에 이미지를 로드할 때 이미지는 function의 매개변수 files로 전달됨 
 				onImageUpload: function(files){
 					// 이미지를 ajax를 이용해서 서버로 보낼 때 가상 form 데이터 사용 
-					var formData = new FormData();
-					formData.append('file', files[0]);  // 파라미터 file, summernote 편집기에 추가된 이미지가 files[0]임
-					// 이미지를 HDD에 저장하고 경로를 받아오는 ajax
-					$.ajax({
-						type: 'post',
-						url: getContextPath() + '/blog/uploadImage',
-						data: formData,
-						contentType: false,  // ajax 이미지 첨부용
-						processData: false,  // ajax 이미지 첨부용
-						dataType: 'json',    // HDD에 저장된 이미지의 경로를 json으로 받아옴
-						success: function(resData){
-							
-							$('#content').summernote('insertImage', resData.src);
-							
-							/*
-								src=${contextPath}/load/image/aaa.jpg 값이 넘어온 경우
-								summernote는
-								<img src="${contextPath}/load/image/aaa.jpg"> 태그를 만든다.
+					for(let i = 0; i < files.length; i++) {
+						var formData = new FormData();
+						formData.append('file', files[i]);  // 파라미터 file, summernote 편집기에 추가된 이미지가 files[0]임
+						// 이미지를 HDD에 저장하고 경로를 받아오는 ajax
+						$.ajax({
+							type: 'post',
+							url: getContextPath() + '/blog/uploadImage',
+							data: formData,
+							contentType: false,  // ajax 이미지 첨부용
+							processData: false,  // ajax 이미지 첨부용
+							dataType: 'json',    // HDD에 저장된 이미지의 경로를 json으로 받아옴
+							success: function(resData){
 								
-								mapping=${contextPath}/load/image/aaa.jpg인 파일의 실제 위치는
-								location=C:\\upload\\aaa.jpg이다.
+								$('#content').summernote('insertImage', resData.src);
 								
-								스프링에서 정적 자원 표시하는 방법은 servlet-context.xml에 있다.
-								이미지(정적 자원)의 mapping과 location을 servlet-context.xml에 작성해야 한다.
-							*/
-						}
-					});  // ajax
+								/*
+									src=${contextPath}/load/image/aaa.jpg 값이 넘어온 경우
+									summernote는
+									<img src="${contextPath}/load/image/aaa.jpg"> 태그를 만든다.
+									
+									mapping=${contextPath}/load/image/aaa.jpg인 파일의 실제 위치는
+									location=C:\\upload\\aaa.jpg이다.
+									
+									스프링에서 정적 자원 표시하는 방법은 servlet-context.xml에 있다.
+									이미지(정적 자원)의 mapping과 location을 servlet-context.xml에 작성해야 한다.
+								*/
+								$('#summernote_image_list').append($('<input type="hidden" name="summernoteImageNames" value="' + resData.filesystem + '">'));
+							}
+						});  // ajax
+					}  // for
 				}  // onImageUpload
 			}  // callbacks
 		});
@@ -101,8 +104,11 @@
 		
 		<div>
 			<label for="content">내용</label>
-			<textarea name="content" id="content"></textarea>				
+			<textarea name="content" name="filesystemList" id="content"></textarea>				
 		</div>
+		
+		<!-- 써머노트에서 사용한 이미지 목록(등록 후 삭제한 이미지도 우선은 모두 올라감: 서비스단에서 지움) -->
+		<div id="summernote_image_list"></div>
 		
 		<div>
 			<button>작성완료</button>

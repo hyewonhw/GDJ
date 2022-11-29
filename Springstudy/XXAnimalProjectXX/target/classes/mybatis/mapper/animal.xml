@@ -18,14 +18,12 @@
 		 WHERE A.ROW_NUM BETWEEN #{begin} AND #{end}
 	</select>
 
-	<!-- /////////////////// -->
 	<insert id="insertGallBrd" parameterType="GallBoardDTO">
 		INSERT INTO ANI_BRD_GALL
 			(GALL_NO, ID, GALL_TITLE, GALL_CONTENT, GALL_HIT, GALL_CREATE_DATE, GALL_MODIFY_DATE, GALL_IP)
 		VALUES
 			(ANI_BRD_GALL_SEQ.NEXTVAL, #{id}, #{gallTitle}, #{gallContent}, 0, SYSDATE, SYSDATE, #{gallIp})
 	</insert>
-	<!-- /////////////////// -->
 	
 	<!-- 조회수 -->
 	<update id="updateGallHit" parameterType="int">

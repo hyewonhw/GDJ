@@ -36,19 +36,21 @@
 			],
 			callbacks: {
 				onImageUpload: function(files){
-					var formData = new FormData();
-					formData.append('file', files[0]);
-					$.ajax({
-						type: 'post',
-						url: getContextPath() + '/blog/uploadImage',
-						data: formData,
-						contentType: false,
-						processData: false,
-						dataType: 'json',
-						success: function(resData){
-							$('#content').summernote('insertImage', resData.src);
-						}
-					});
+					for(let i = 0; i < files.length; i++) {
+						var formData = new FormData();
+						formData.append('file', files[0]);
+						$.ajax({
+							type: 'post',
+							url: getContextPath() + '/blog/uploadImage',
+							data: formData,
+							contentType: false,
+							processData: false,
+							dataType: 'json',
+							success: function(resData){
+								$('#content').summernote('insertImage', resData.src);
+							}
+						});
+					}
 				}
 			}
 		});
@@ -89,6 +91,9 @@
 			<label for="content">내용</label>
 			<textarea name="content" id="content">${blog.content}</textarea>				
 		</div>
+		
+		<!-- 써머노트에서 사용한 이미지 목록(등록 후 삭제한 이미지도 우선은 모두 올라감: 서비스단에서 지움) -->
+		<div id="summernote_image_list"></div>
 		
 		<div>
 			<button>수정완료</button>

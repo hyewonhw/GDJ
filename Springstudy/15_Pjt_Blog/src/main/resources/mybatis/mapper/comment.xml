@@ -13,6 +13,7 @@
 		 WHERE BLOG_NO = #{blogNo}
 	</select>
 	
+	<!-- 댓글달기 답글에 못씀 -->
 	<insert id="insertComment" parameterType="CommentDTO">
 		INSERT INTO COMMENTS
 			(COMMENT_NO, BLOG_NO, CONTENT, STATE, DEPTH, GROUP_NO, CREATE_DATE)
@@ -20,15 +21,28 @@
 			(COMMENTS_SEQ.NEXTVAL, #{blogNo}, #{content}, 1, 0, COMMENTS_SEQ.CURRVAL, SYSDATE)
 	</insert>
 	
+	<!-- 사용자와의 join으로 사용자의 이름을 표시 -->
 	<select id="selectCommentList" parameterType="Map" resultType="CommentDTO">
 		SELECT A.ROW_NUM, A.COMMENT_NO, A.BLOG_NO, A.CONTENT, A.STATE, A.DEPTH, A.GROUP_NO, A.CREATE_DATE
-		  FROM (SELECT ROW_NUMBER() OVER(ORDER BY GROUP_NO DESC, DEPTH ASC) AS ROW_NUM, COMMENT_NO, BLOG_NO, CONTENT, STATE, DEPTH, GROUP_NO, CREATE_DATE
+		  FROM (SELECT ROW_NUMBER() OVER(ORDER BY GROUP_NO DESC, DEPTH ASC, CREATE_DATE DESC) AS ROW_NUM, COMMENT_NO, BLOG_NO, CONTENT, STATE, DEPTH, GROUP_NO, CREATE_DATE
 		   		  FROM COMMENTS 
 		   		 WHERE BLOG_NO = #{blogNo}) A
 		 WHERE A.ROW_NUM BETWEEN #{begin} AND #{end}
 	</select>
 	
+	<update id="deleteComment" parameterType="int" >
+		UPDATE COMMENTS
+		   SET STATE = -1
+		 WHERE COMMENT_NO = #{commentNo}
+	</update>
 	
+	<!-- 답글 -->
+	<insert id="insertReply" parameterType="CommentDTO">
+		INSERT INTO COMMENTS
+			(COMMENT_NO, BLOG_NO, CONTENT, STATE, DEPTH, GROUP_NO, CREATE_DATE)
+		VALUES
+			(COMMENTS_SEQ.NEXTVAL, #{blogNo}, #{content}, 1, 1, #{groupNo}, SYSDATE)
+	</insert>
 	
 </mapper>
 	
