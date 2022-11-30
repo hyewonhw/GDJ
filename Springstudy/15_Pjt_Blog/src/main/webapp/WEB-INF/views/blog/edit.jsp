@@ -38,7 +38,7 @@
 				onImageUpload: function(files){
 					for(let i = 0; i < files.length; i++) {
 						var formData = new FormData();
-						formData.append('file', files[0]);
+						formData.append('file', files[i]);
 						$.ajax({
 							type: 'post',
 							url: getContextPath() + '/blog/uploadImage',

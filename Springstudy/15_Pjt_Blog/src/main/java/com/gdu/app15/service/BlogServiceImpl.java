@@ -218,6 +218,7 @@ public class BlogServiceImpl implements BlogService {
 				
 	}
 	
+	@Transactional
 	@Override
 	public void modifyBlog(HttpServletRequest request, HttpServletResponse response) {
 		
