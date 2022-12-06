@@ -21,7 +21,6 @@ public class CommentServiceImpl implements CommentService {
 	@Autowired
 	private PageUtil pageUtil;
 	
-	// 
 	@Override
 	public Map<String, Object> getCommentCount(int blogNo) {
 		Map<String, Object> result = new HashMap<String, Object>();

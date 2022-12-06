@@ -7,7 +7,7 @@ public class Exam {
 	// 1234567은 남자입니다.
 	public static void q1() {
 		String serial = "1234567";
-		
+	
 	}
 	
 	// 문제2. int a와 int b에 저장된 결과를 이용해서 사칙연산 결과를 출력하시오.

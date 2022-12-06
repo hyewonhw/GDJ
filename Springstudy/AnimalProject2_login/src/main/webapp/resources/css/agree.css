@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+
+ .blind {
+    display: none;  /* 화면에서 영역을 차지하지 않고 완전히 삭제된 것처럼 보임 */
+ }
+
