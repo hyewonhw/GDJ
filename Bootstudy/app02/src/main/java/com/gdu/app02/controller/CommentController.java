@@ -22,7 +22,7 @@ public class CommentController {
 	
 	@ResponseBody
 	@GetMapping(value="/comment/getCount", produces="application/json")
-	public Map<String, Object> getCount(@RequestParam("blogNo") int blogNo){
+	public Map<String, Object> getCount(@RequestParam("blogNo") int blogNo) {
 		return commentService.getCommentCount(blogNo);
 	}
 	
@@ -46,10 +46,8 @@ public class CommentController {
 	
 	@ResponseBody
 	@PostMapping(value="/comment/reply/add", produces="application/json")
-	public Map<String, Object> replyAdd(CommentDTO reply) {
+	public Map<String, Object> replyAdd(CommentDTO reply){
 		return commentService.addReply(reply);
 	}
-	
-	
 	
 }

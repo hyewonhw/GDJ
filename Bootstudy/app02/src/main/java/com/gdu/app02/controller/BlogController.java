@@ -38,7 +38,7 @@ public class BlogController {
 	public String write() {
 		return "blog/write";
 	}
-
+	
 	@ResponseBody
 	@PostMapping(value="/blog/uploadImage", produces="application/json")
 	public Map<String, Object> uploadImage(MultipartHttpServletRequest multipartRequest) {

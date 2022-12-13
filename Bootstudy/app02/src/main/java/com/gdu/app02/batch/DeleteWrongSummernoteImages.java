@@ -53,7 +53,10 @@ public class DeleteWrongSummernoteImages {
 				return !pathList.contains(new File(dir, name).toPath());
 			}
 		});
-		
+		/*
+		Lambda Expression
+		File[] wrongSummernoteImages = dir.listFiles((directory, name) -> pathList.contains(new File(directory, name).toPath()));
+		*/
 		// System.out.println("2   " + Arrays.toString(wrongSummernoteImages));
 		
 		// 삭제

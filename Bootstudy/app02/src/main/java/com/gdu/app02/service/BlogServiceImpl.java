@@ -70,12 +70,12 @@ public class BlogServiceImpl implements BlogService {
 	@Override
 	public Map<String, Object> saveSummernoteImage(MultipartHttpServletRequest multipartRequest) {
 		
-		// 파라미터 file
+		// 파라미터 files
 		MultipartFile multipartFile = multipartRequest.getFile("file");
-		
+			
 		// 저장 경로
 		String path = "C:" + File.separator + "summernoteImage";
-		
+				
 		// 저장할 파일명
 		String filesystem = myFileUtil.getFilename(multipartFile.getOriginalFilename());
 		
@@ -97,12 +97,9 @@ public class BlogServiceImpl implements BlogService {
 		
 		// 저장된 파일을 확인할 수 있는 매핑을 반환
 		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("src", multipartRequest.getContextPath() + "/load/image/" + filesystem);
+		map.put("src", multipartRequest.getContextPath() + "/load/image/" + filesystem);  // 이미지 mapping값을 반환
 		map.put("filesystem", filesystem);  // HDD에 저장된 파일명 반환
 		return map;
-		
-		// 저장된 파일이 aaa.jpg라고 가정하면
-		// src=${contextPath}/load/image/aaa.jpg 이다. 
 		
 	}
 	
@@ -135,7 +132,7 @@ public class BlogServiceImpl implements BlogService {
 				.ip(ip)
 				.build();
 		
-		// DB에 저장
+		// DB에 Blog 저장
 		int result = blogMapper.insertBlog(blog);
 		
 		// 응답
@@ -145,7 +142,7 @@ public class BlogServiceImpl implements BlogService {
 			PrintWriter out = response.getWriter();
 			
 			out.println("<script>");
-			if(result > 0) {	
+			if(result > 0) {
 				
 				// 파라미터 summernoteImageNames
 				String[] summernoteImageNames = request.getParameterValues("summernoteImageNames");
@@ -167,7 +164,7 @@ public class BlogServiceImpl implements BlogService {
 				out.println("alert('삽입 실패');");
 				out.println("history.back();");
 			}
-			out.println("</script>");			
+			out.println("</script>");
 			out.close();
 			
 		} catch (Exception e) {
@@ -183,6 +180,7 @@ public class BlogServiceImpl implements BlogService {
 	
 	@Override
 	public BlogDTO getBlogByNo(int blogNo) {
+		
 		
 		// 블로그를 새로 등록하거나 수정할 때
 		// 써머노트에 이미지를 넣는 것은 ajax로 실시간 처리가 되지만,
@@ -215,7 +213,7 @@ public class BlogServiceImpl implements BlogService {
 		
 		// 블로그 반환
 		return blog;
-				
+		
 	}
 	
 	@Transactional
@@ -244,8 +242,8 @@ public class BlogServiceImpl implements BlogService {
 			PrintWriter out = response.getWriter();
 			
 			out.println("<script>");
-			if(result > 0) {			
-			
+			if(result > 0) {
+				
 				// 파라미터 summernoteImageNames
 				String[] summernoteImageNames = request.getParameterValues("summernoteImageNames");
 				
@@ -259,14 +257,14 @@ public class BlogServiceImpl implements BlogService {
 						blogMapper.insertSummernoteImage(summernoteImage);
 					}
 				}
-			
+				
 				out.println("alert('수정 성공');");
 				out.println("location.href='" + request.getContextPath() + "/blog/detail?blogNo=" + blogNo + "';");
 			} else {
 				out.println("alert('수정 실패');");
 				out.println("history.back();");
 			}
-			out.println("</script>");			
+			out.println("</script>");
 			out.close();
 			
 		} catch (Exception e) {
@@ -285,7 +283,7 @@ public class BlogServiceImpl implements BlogService {
 		List<SummernoteImageDTO> summernoteImageList = blogMapper.selectSummernoteImageListInBlog(blogNo);
 		
 		// DB 삭제
-		int result = blogMapper.deleteBlog(blogNo);
+		int result = blogMapper.deleteBlog(blogNo);  // 외래키 제약조건에 의해서 SummernoteImage도 모두 지워짐
 		
 		// 응답
 		try {
@@ -294,7 +292,7 @@ public class BlogServiceImpl implements BlogService {
 			PrintWriter out = response.getWriter();
 			
 			out.println("<script>");
-			if(result > 0) {	
+			if(result > 0) {
 				
 				// HDD에서 SummernoteImage 리스트 삭제
 				if(summernoteImageList != null && summernoteImageList.isEmpty() == false) {
@@ -312,7 +310,7 @@ public class BlogServiceImpl implements BlogService {
 				out.println("alert('삭제 실패');");
 				out.println("history.back();");
 			}
-			out.println("</script>");			
+			out.println("</script>");
 			out.close();
 			
 		} catch (Exception e) {
